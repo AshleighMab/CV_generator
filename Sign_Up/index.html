@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link href="./../Sign_Up/style.css" rel="stylesheet">
+    <script type="text/javascript" src="./../Sign_Up/index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+    <form class="form" id="createAccount">
+        <h1 class="form_title">Create Account</h1>
+        <div class="form_message form_message--error"></div>
+        <div class="form_input-group">
+            <input type="text" id="firstname" class="form_input" autofocus placeholder="First name">
+            <div class="form_input-error-message"></div>
+        </div>
+        <div class="form_input-group">
+            <input type="text" id="surname" class="form_input" autofocus placeholder="Surname">
+            <div class="form_input-error-message"></div>
+        </div>
+        <div class="form_input-group">
+            <input type="text" class="form_input" autofocus placeholder="Email Address">
+            <div class="form_input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="password" class="form_input" autofocus placeholder="Password">
+            <div class="form_input-error-message"></div>
+        </div>
+        <div class="form_input-group">
+            <input type="password" class="form_input" autofocus placeholder="Confirm password">
+            <div class="form_input-error-message"></div>
+        </div>
+        <button class="form_button" type="submit">Sign Up</button>
+        <p class="form_text">
+            <a class="form_link" href="./../Login/index.html" id="linkLogin">Already have an account? Login</a>
+        </p>
+    </form>      
+</div>
+</body>
+
+</html>
