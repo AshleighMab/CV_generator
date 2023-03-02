@@ -16,10 +16,10 @@ function createUser(userDetails){
       };
       fetch("http://localhost:21021/api/services/app/User/Create", requestOptions)
         .then(response => response.json())
-        .then(result => console.log('User created'))//{
-        //     localStorage.setItem('UserInfo', JSON.stringify(result))
-        //      location.href = './../Login/index.html'          
-        // })
+        .then(result => {
+            localStorage.setItem('UserInfo', JSON.stringify(result))
+            location.href = './../Login/index.html'          
+        })
         .catch(error => alert('error', error));
         
         console.log('end of create user')
@@ -43,7 +43,7 @@ function fetchUser(Id){
         })
         .catch(error => alert('error', error));
         
-        console.log('end of create user')
+        console.log('end of fetch user')
 }
 
 

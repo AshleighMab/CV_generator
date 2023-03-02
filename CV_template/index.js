@@ -139,15 +139,15 @@ form_4_back_btn.addEventListener("click", function(){
 	form_4_progessbar.classList.remove("active");
 });
 
-// form_4_next_btn.addEventListener("click", function(){
-// 	form_4.style.display = "none";
-// 	form_5.style.display = "block";
+form_4_next_btn.addEventListener("click", function(){
+	form_4.style.display = "none";
+	form_5.style.display = "block";
 
-// 	form_5_btns.style.display = "flex";
-// 	form_4_btns.style.display = "none";
+	form_5_btns.style.display = "flex";
+	form_4_btns.style.display = "none";
 
-// 	form_5_progessbar.classList.add("active");
-// });
+	form_5_progessbar.classList.add("active");
+});
 
 form_5_back_btn.addEventListener("click", function(){
 	form_4.style.display = "block";

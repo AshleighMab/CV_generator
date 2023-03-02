@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -10,43 +10,51 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
-body{
-	background: #DBEBC0;
-	color: var(--text-clr);
+body {
+
 	font-size: 16px;
 	position: relative;
 	background-image: url(./../static/images/greenbg.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+    display:flex;
+     align-items: center;
+	 justify-content: center;
+
 }
 
-.wrapper{
+.wrapper {
 	width: 900px;
+
+	
 	max-width: 100%;
 	background: white;
-	margin: 100px auto 0;
 	padding: 50px;
 	border-radius: 5px;
+	height: fit-content;
 }
 
-.wrapper .header{
+.wrapper .header {
 	margin-bottom: 35px;
 	display: flex;
 	justify-content: center;
 }
 
-.wrapper .header ul{
+.wrapper .header ul {
 	display: flex;
 }
 
-.wrapper .header ul li{
+.wrapper .header ul li {
 	margin-right: 50px;
 	position: relative;
 }
 
-.wrapper .header ul li:last-child{
+.wrapper .header ul li:last-child {
 	margin-right: 0;
 }
 
-.wrapper .header ul li:before{
+.wrapper .header ul li:before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -57,16 +65,16 @@ body{
 	background: #B279A7;
 }
 
-.wrapper .header ul li:last-child:before{
+.wrapper .header ul li:last-child:before {
 	display: none;
 }
 
-.wrapper .header ul li div{
+.wrapper .header ul li div {
 	padding: 5px;
 	border-radius: 50%;
 }
 
-.wrapper .header ul li p{
+.wrapper .header ul li p {
 	width: 50px;
 	height: 50px;
 	background: #B279A7;
@@ -76,19 +84,29 @@ body{
 	border-radius: 50%;
 }
 
-.wrapper .header ul li.active:before{
+.wrapper .header ul li.active:before {
 	background: #DBEBC0;
 }
 
-.wrapper .header ul li.active p{
-	background:  #DBEBC0;
+.wrapper .header ul li.active p {
+	background: #DBEBC0;
 }
 
-.wrapper .form_wrap{
+.form_wrap {
+	/* my edit */
+	display: center;
 	margin-bottom: 35px;
 }
 
-.wrapper .form_wrap h2{
+
+.form_container{
+	display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.wrapper .form_wrap h2 {
 	color: var(--header-clr);
 	text-align: center;
 	text-transform: uppercase;
@@ -96,70 +114,57 @@ body{
 }
 
 
-.wrapper .form_wrap .input_wrap{
+.wrapper .form_wrap .input_wrap {
 	width: 350px;
 	max-width: 100%;
 	margin: 0 auto 20px;
-	
+
 }
 
-.wrapper .form_wrap .input_wrap:last-child{
+.wrapper .form_wrap .input_wrap:last-child {
 	margin-bottom: 0;
 }
 
-.wrapper .form_wrap .input_wrap label{
+.wrapper .form_wrap .input_wrap label {
 	display: block;
 	margin-bottom: 5px;
 }
 
-.wrapper .form_wrap .input_wrap .input{
+.wrapper .form_wrap .input_wrap .input {
 	border: 2px solid #B279A7;
 	border-radius: 3px;
 	padding: 10px;
 	display: block;
-	width: 100%;	
+	width: 100%;
+
 	font-size: 16px;
 	transition: 0.5s ease;
 }
 
-.wrapper .form_wrap .input_wrap .input:focus{
+.wrapper .form_wrap .input_wrap .input:focus {
 	border-color: #DBEBC0;
 }
 
-.wrapper .btns_wrap{
+.wrapper .btns_wrap {
 	width: 350px;
 	max-width: 100%;
 	margin: 0 auto;
 }
 
-.wrapper .btns_wrap .common_btns{
+.wrapper .btns_wrap .common_btns {
 	display: flex;
 	justify-content: space-between;
 }
 
-.wrapper .btns_wrap .common_btns.form_1_btns{
+.wrapper .btns_wrap .common_btns.form_1_btns {
 	justify-content: flex-end;
 }
 
-.add-education-btn{
+.add-education-btn {
 	border: 0;
 	padding: 12px 15px;
 	background: #DBEBC0;
-	color:#B279A7;
-	width: 135px;
-	justify-content: center;
-	display: flex;
-	align-items: center;
-	font-size: 16px;
-	border-radius: 3px;
-	transition: 0.5s ease;
-	cursor: pointer;
-}
-.wrapper .btns_wrap .common_btns button{
-	border: 0;
-	padding: 12px 15px;
-	background: #DBEBC0;
-	color:#B279A7;
+	color: #B279A7;
 	width: 135px;
 	justify-content: center;
 	display: flex;
@@ -170,30 +175,45 @@ body{
 	cursor: pointer;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_back{
+.wrapper .btns_wrap .common_btns button {
+	border: 0;
+	padding: 12px 15px;
+	background: #DBEBC0;
+	color: #B279A7;
+	width: 135px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	border-radius: 3px;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+
+.wrapper .btns_wrap .common_btns button.btn_back {
 	background: #DBEBC0;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_next .icon{
+.wrapper .btns_wrap .common_btns button.btn_next .icon {
 	display: flex;
 	margin-left: 10px;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_back .icon{
+.wrapper .btns_wrap .common_btns button.btn_back .icon {
 	display: flex;
 	margin-right: 10px;
 }
 
 .wrapper .btns_wrap .common_btns button.btn_next:hover,
-.wrapper .btns_wrap .common_btns button.btn_done:hover{
-	background:  #DBEBC0 ;
-}
-
-.wrapper .btns_wrap .common_btns button.btn_back:hover{
+.wrapper .btns_wrap .common_btns button.btn_done:hover {
 	background: #DBEBC0;
 }
 
-.modal_wrapper{
+.wrapper .btns_wrap .common_btns button.btn_back:hover {
+	background: #DBEBC0;
+}
+
+.modal_wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -202,22 +222,22 @@ body{
 	visibility: hidden;
 }
 
-.modal_wrapper .shadow{
+.modal_wrapper .shadow {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.8);
+	background: rgba(0, 0, 0, 0.8);
 	opacity: 0;
 	transition: 0.2s ease;
 }
 
-.modal_wrapper .success_wrap{
+.modal_wrapper .success_wrap {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-800px);
+	transform: translate(-50%, -800px);
 	background: white;
 	padding: 50px;
 	display: flex;
@@ -226,7 +246,7 @@ body{
 	transition: 0.5s ease;
 }
 
-.modal_wrapper .success_wrap .modal_icon{
+.modal_wrapper .success_wrap .modal_icon {
 	margin-right: 20px;
 	width: 50px;
 	height: 50px;
@@ -240,33 +260,39 @@ body{
 	font-weight: 700;
 }
 
-.modal_wrapper.active{
+.modal_wrapper.active {
 	visibility: visible;
 }
 
-.modal_wrapper.active .shadow{
+.modal_wrapper.active .shadow {
 	opacity: 1;
 }
 
-.modal_wrapper.active .success_wrap{
-	transform: translate(-50%,-50%);
+.modal_wrapper.active .success_wrap {
+	transform: translate(-50%, -50%);
 }
 
 label,
-      input {
-        display: block;
-        margin-bottom: 10px;
-      }
+input {
+	display: block;
+	margin-bottom: 10px;
+}
 
-      .education-container {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
+.education-container {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
 
-      .remove-education-btn {
-        display: block;
-        margin-top: 10px;
-        color: red;
-        cursor: pointer;
-      }
+}
+
+.remove-education-btn {
+	display: block;
+	margin-top: 10px;
+	color: red;
+	cursor: pointer;
+}
+
+#add-education-btn{
+  position: center;
+  
+}
