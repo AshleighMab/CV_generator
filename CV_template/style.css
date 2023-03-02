@@ -15,6 +15,7 @@ body{
 	color: var(--text-clr);
 	font-size: 16px;
 	position: relative;
+	background-image: url(./../static/images/greenbg.jpg);
 }
 
 .wrapper{
@@ -140,6 +141,20 @@ body{
 	justify-content: flex-end;
 }
 
+.add-education-btn{
+	border: 0;
+	padding: 12px 15px;
+	background: #DBEBC0;
+	color:#B279A7;
+	width: 135px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	border-radius: 3px;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
 .wrapper .btns_wrap .common_btns button{
 	border: 0;
 	padding: 12px 15px;
@@ -236,3 +251,22 @@ body{
 .modal_wrapper.active .success_wrap{
 	transform: translate(-50%,-50%);
 }
+
+label,
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .education-container {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .remove-education-btn {
+        display: block;
+        margin-top: 10px;
+        color: red;
+        cursor: pointer;
+      }

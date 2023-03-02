@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
 
 :root{
-    --yellow: red;
+    --yellow: #DBEBC0;
 }
 
 *{
@@ -15,7 +15,7 @@
 }
 
 *::selection{
-    background:var(--yellow);
+    background:#DBEBC0;
     color:#333;
 }
 
@@ -33,7 +33,7 @@ html::-webkit-scrollbar-track{
 }
 
 html::-webkit-scrollbar-thumb{
-    background:var(--yellow);
+    background:#DBEBC0;
 }
 
 body{
@@ -63,7 +63,7 @@ section{
 }
 
 .btn:hover{
-    background:var(--yellow);
+    background:#DBEBC0;
 }
 
 .heading{
@@ -76,7 +76,7 @@ section{
 }
 
 .heading span{
-    color:var(--yellow);
+    color:  #DBEBC0;
 }
 
 header{
@@ -126,21 +126,21 @@ header .navbar ul li a{
     display: block;
     padding:1rem;
     margin:1.5rem 0;
-    background:#333;
-    color:#fff;
+    background: #DBEBC0;
+    color: black;
     font-size: 2rem;
     border-radius: 5rem;
 }
 
 header .navbar ul li a:hover{
-    background:var(--yellow);
+    background: #DBEBC0;
 }
 
 #menu{
     position: fixed;
     top:2rem; right:2rem;
-    background:#333;
-    color:#fff;
+    background: white;
+    color: black;
     cursor: pointer;
     font-size: 2.5rem;
     padding:1rem 1.5rem;
@@ -166,7 +166,7 @@ header .navbar ul li a:hover{
 }
 
 .home h1 span{
-    color:var(--yellow);
+    color:#DBEBC0;
 }
 
 .home p{
@@ -210,7 +210,7 @@ header .navbar ul li a:hover{
 
 .about .row .counter .box{
     width:20rem;
-    background:#222;
+    background: #DBEBC0;
     text-align: center;
     padding: 2rem;
     margin:2rem;
@@ -223,7 +223,7 @@ header .navbar ul li a:hover{
 
 .about .row .counter .box h3{
     font-size: 2rem;
-    color:#fff;
+    color: black;
 }
 
 .education .box-container{
@@ -316,32 +316,6 @@ header .navbar ul li a:hover{
     padding-bottom: 0;
 }
 
-.contact .row form{
-    flex:1 1 45rem;
-    padding:2rem;
-    margin:2rem;
-    margin-bottom: 4rem;
-}
-
-.contact .row form .box{
-    padding:1.5rem;
-    margin:1rem 0;
-    background:#3333;
-    color:#fff;
-    text-transform: none;
-    font-size: 1.7rem;
-    width:100%;
-}
-
-.contact .row form .box::placeholder{
-    text-transform: capitalize;
-}
-
-.contact .row form .message{
-    height: 15rem;
-    resize: none;
-}
-
 .contact .row .content .title{
     text-transform: uppercase;
     color:#fff;
@@ -370,25 +344,6 @@ header .navbar ul li a:hover{
     display: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* media queries  */
 
 @media (max-width:1200px){
 

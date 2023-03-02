@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <link href="./../Sign_Up/style.css" rel="stylesheet">
-    <script type="text/javascript" src="./../Sign_Up/index.js"></script>
 </head>
 
 <body>
@@ -23,23 +22,25 @@
             <div class="form_input-error-message"></div>
         </div>
         <div class="form_input-group">
-            <input type="text" class="form_input" autofocus placeholder="Email Address">
+            <input type="text" id="emailaddress" class="form_input" autofocus placeholder="Email Address">
             <div class="form_input-error-message"></div>
         </div>
         <div class="form__input-group">
-            <input type="password" class="form_input" autofocus placeholder="Password">
+            <input type="password" id="password" class="form_input" autofocus placeholder="Password">
             <div class="form_input-error-message"></div>
         </div>
         <div class="form_input-group">
-            <input type="password" class="form_input" autofocus placeholder="Confirm password">
+            <input type="password" id="confirmPassW" class="form_input" autofocus placeholder="Confirm password">
             <div class="form_input-error-message"></div>
         </div>
-        <button class="form_button" type="submit">Sign Up</button>
+        <button class="form_button" id="signUpButton" type="button">Sign Up</button>
         <p class="form_text">
             <a class="form_link" href="./../Login/index.html" id="linkLogin">Already have an account? Login</a>
         </p>
     </form>      
-</div>
+    </div>
+    
 </body>
+<script type="module" src="./../Sign_Up/index.js"></script>
 
 </html>
