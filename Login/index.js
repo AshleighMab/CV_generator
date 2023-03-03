@@ -79,6 +79,37 @@
 //         });
 //     })
 // }
+
+///CURRENT VERSION
+// import {LogInUser} from './../apis/login.js'
+
+// const loginform = document.querySelector("#login")
+
+// if (loginform) {
+//     loginform.addEventListener('submit', e => {
+//         e.preventDefault();
+//         const loginData = {
+//             userNameOrEmailAddress: document.querySelector("#email").value,
+//             password: document.querySelector("#password").value,
+//             rememberClient: true
+//         }
+//         console.log("values ::", loginData)
+//         LogInUser(loginData)
+//             .then(response => {
+//                 console.log("checking something");
+//                 if (response.userNameOrEmailAddress == loginData.userNameOrEmailAddress && response.password == loginData.password) {
+//                     console.log("checking condition");
+                   
+//                     location.href = './../CV_template/index.html'
+//                 } 
+//             })
+//             .catch(error => {
+//                 // console.error(error)
+//                 alert(error.message)
+//             });
+//     })
+// }
+
 import {LogInUser} from './../apis/login.js'
 
 const loginform = document.querySelector("#login")
@@ -94,14 +125,15 @@ if (loginform) {
         console.log("values ::", loginData)
         LogInUser(loginData)
             .then(response => {
+                console.log("checking something");
                 if (response.userNameOrEmailAddress == loginData.userNameOrEmailAddress && response.password == loginData.password) {
-                   location.href = './../CV_template/index.html'
-                } else {
-                    throw new Error('Wrong password or username')
-                }
+                    console.log("checking condition");
+                   
+                    location.href = './../CV_template/index.html'
+                } 
             })
             .catch(error => {
-                console.error(error)
+                // console.error(error)
                 alert(error.message)
             });
     })

@@ -45,6 +45,51 @@ addEducationBtn.addEventListener("click", function (event) {
 });
 
 
+//JavaScript for adding and removing work entries
+const workform = document.getElementById("work-form");
+const workList = document.getElementById("work-list");
+const addworkBtn = document.getElementById("add-work-btn");
+
+let workIndex = 1;
+
+addworkBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const workContainer = document.createElement("div");
+  workContainer.classList.add("work-container");
+
+  const workName = document.createElement("p");
+ workName.textContent = `Company name: ${form["work-name"].value}`;
+  workContainer.appendChild(workName);
+
+  const title = document.createElement("p");
+  title.textContent = `Title: ${form["title"].value}`;
+  workContainer.appendChild(title);
+
+  const startDatework = document.createElement("p");
+  startDatework.textContent = `Start Date: ${form["start-date-work"].value}`;
+  workContainer.appendChild(startDatework);
+
+  const endDatework = document.createElement("p");
+  endDatework.textContent = `End Date: ${form["end-date-work"].value}`;
+  workContainer.appendChild(endDatework);
+
+  const removeworkBtn = document.createElement("button");
+  removeworkBtn.classList.add("remove-work-btn");
+  removeworkBtn.textContent = "Remove Work";
+  removeworkBtn.addEventListener("click", function (event) {
+  workContainer.remove();
+  });
+  workContainer.appendChild(removeworkBtn);
+
+  workList.appendChild(workContainer);
+
+  workform.reset();
+
+ workIndex++;
+});
+
+
 var form_1 = document.querySelector(".form_1");
 var form_2 = document.querySelector(".form_2");
 var form_3 = document.querySelector(".form_3");
@@ -65,7 +110,7 @@ var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
 var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
 var form_3_next_btn = document.querySelector(".form_3_btns .btn_next");
 var form_4_back_btn = document.querySelector(".form_4_btns .btn_back");
-var form_4_next_btn = document.querySelector(".form_4 btns .btn_next");
+var form_4_next_btn = document.querySelector(".form_4_btns .btn_next");
 var form_5_back_btn = document.querySelector(".form_5_btns .btn_back");
 
 var form_2_progessbar = document.querySelector(".form_2_progessbar");
@@ -170,8 +215,7 @@ shadow.addEventListener("click", function(){
 
 
 let userInfo = JSON.parse(localStorage.getItem('UserInfo'))
-//console.log(userInfo.result.id)
-fetchUser(userInfo.result.id)
+console.log(userInfo.result.surname)
+fetchUser(userInfo.result.surname)
 
 
-      
