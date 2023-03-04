@@ -1,7 +1,7 @@
 import { fetchUser } from "../apis/users.js";
 
 // JavaScript for adding and removing education entries
-const form = document.getElementById("education-form");
+const form_education = document.getElementById("education-form");
 const educationList = document.getElementById("education-list");
 const addEducationBtn = document.getElementById("add-education-btn");
 
@@ -14,19 +14,19 @@ addEducationBtn.addEventListener("click", function (event) {
   educationContainer.classList.add("education-container");
 
   const schoolName = document.createElement("p");
-  schoolName.textContent = `School Name: ${form["school-name"].value}`;
+  schoolName.textContent = `School Name: ${form_education["school-name"].value}`;
   educationContainer.appendChild(schoolName);
 
   const degree = document.createElement("p");
-  degree.textContent = `Degree: ${form["degree"].value}`;
+  degree.textContent = `Degree: ${form_education["degree"].value}`;
   educationContainer.appendChild(degree);
 
   const startDate = document.createElement("p");
-  startDate.textContent = `Start Date: ${form["start-date"].value}`;
+  startDate.textContent = `Start Date: ${form_education["start-date"].value}`;
   educationContainer.appendChild(startDate);
 
   const endDate = document.createElement("p");
-  endDate.textContent = `End Date: ${form["end-date"].value}`;
+  endDate.textContent = `End Date: ${form_education["end-date"].value}`;
   educationContainer.appendChild(endDate);
 
   const removeEducationBtn = document.createElement("button");
@@ -39,56 +39,129 @@ addEducationBtn.addEventListener("click", function (event) {
 
   educationList.appendChild(educationContainer);
 
-  form.reset();
+  form_education.reset();
 
   educationIndex++;
 });
 
+const form_work = document.getElementById("work-experience-form");
+      const workExperienceList = document.getElementById("work-experience-list");
+      const addWorkExperienceBtn = document.getElementById("add-work-experience-btn");
 
-// JavaScript for adding and removing education entries
-// const workform = document.getElementById("work-form");
-// const workList = document.getElementById("work-list");
-// const addworkBtn = document.getElementById("add-work-btn");
+      let workExperienceIndex = 1;
 
-// let workIndex = 1;
+      addWorkExperienceBtn.addEventListener("click", function (event) {
+        event.preventDefault();
 
-// addworkBtn.addEventListener("click", function (event) {
-//   event.preventDefault();
+        const workExperienceContainer = document.createElement("div");
+        workExperienceContainer.classList.add("work-experience-container");
 
-//   const workContainer = document.createElement("div");
-//   workContainer.classList.add("work-container");
+        const companyName = document.createElement("p");
+        companyName.textContent = `Company Name: ${form_work["company-name"].value}`;
+        workExperienceContainer.appendChild(companyName);
 
-//   const workName = document.createElement("p");
-//  workName.textContent = `Company name: ${form["work-name"].value}`;
-//   workContainer.appendChild(workName);
+        const position = document.createElement("p");
+        position.textContent = `Position: ${form_work["position"].value}`;
+        workExperienceContainer.appendChild(position);
 
-//   const title = document.createElement("p");
-//   title.textContent = `Title: ${form["title"].value}`;
-//   workContainer.appendChild(title);
+        const startDate = document.createElement("p");
+        startDate.textContent = `Start Date: ${form_work["start-date"].value}`;
+        workExperienceContainer.appendChild(startDate);
 
-//   const startDate = document.createElement("p");
-//   startDate.textContent = `Start Date: ${form["start-date"].value}`;
-//   workContainer.appendChild(startDate);
+        const endDate = document.createElement("p");
+        endDate.textContent = `End Date: ${form_work["end-date"].value}`;
+        workExperienceContainer.appendChild(endDate);
 
-//   const endDate = document.createElement("p");
-//   endDate.textContent = `End Date: ${form["end-date"].value}`;
-//   workContainer.appendChild(endDate);
+        const removeWorkExperienceBtn = document.createElement("button");
+        removeWorkExperienceBtn.classList.add("remove-work-experience-btn");
+        removeWorkExperienceBtn.textContent = "Remove Work Experience";
+        removeWorkExperienceBtn.addEventListener("click", function (event) {
+          workExperienceContainer.remove();
+        });
+        workExperienceContainer.appendChild(removeWorkExperienceBtn);
 
-//   const removeworkBtn = document.createElement("button");
-//   removeworkBtn.classList.add("remove-education-btn");
-//   removeworkBtn.textContent = "Remove Education";
-//   removeworkBtn.addEventListener("click", function (event) {
-// workContainer.remove();
-//   });
-//   workContainer.appendChild(removeworkBtn);
+        workExperienceList.appendChild(workExperienceContainer);
 
-//   workList.appendChild(workContainer);
+        form_work.reset();
 
-//   workform.reset();
+        workExperienceIndex++;
+      });
 
-//  workIndex++;
-// });
+	   // JavaScript for adding and removing skill entries
+	   const form_skills = document.getElementById("skill-form");
+	   const skillList = document.getElementById("skill-list");
+	   const addSkillBtn = document.getElementById("add-skill-btn");
+ 
+	   let skillIndex = 1;
+ 
+	   addSkillBtn.addEventListener("click", function (event) {
+		 event.preventDefault();
+ 
+		 const skillContainer = document.createElement("div");
+		 skillContainer.classList.add("skill-container");
+ 
+		 const skillName = document.createElement("p");
+		 skillName.textContent = `Skill Name: ${form_skills["skill-name"].value}`;
+		 skillContainer.appendChild(skillName);
+ 
+		 const skillLevel = document.createElement("p");
+		 skillLevel.textContent = `Skill Level: ${form_skills["skill-level"].value}`;
+		 skillContainer.appendChild(skillLevel);
+ 
+		 const removeSkillBtn = document.createElement("button");
+		 removeSkillBtn.classList.add("remove-skill-btn");
+		 removeSkillBtn.textContent = "Remove Skill";
+		 removeSkillBtn.addEventListener("click", function (event) {
+		   skillContainer.remove();
+		 });
+		 skillContainer.appendChild(removeSkillBtn);
+ 
+		 skillList.appendChild(skillContainer);
+ 
+		 form_skills.reset();
+ 
+		 skillIndex++;
+	   });
 
+	    // JavaScript for adding and removing certification entries
+		const form_certifications = document.getElementById("certification-form");
+		const certificationList = document.getElementById("certification-list");
+		const addCertificationBtn = document.getElementById("add-certification-btn");
+  
+		let certificationIndex = 1;
+  
+		addCertificationBtn.addEventListener("click", function (event) {
+		  event.preventDefault();
+  
+		  const certificationContainer = document.createElement("div");
+		  certificationContainer.classList.add("certification-container");
+  
+		  const certificationName = document.createElement("p");
+		  certificationName.textContent = `Certification Name: ${form_certifications["certification-name"].value}`;
+		  certificationContainer.appendChild(certificationName);
+  
+		  const certificationAuthority = document.createElement("p");
+		  certificationAuthority.textContent = `Certification Authority: ${form_certifications["certification-authority"].value}`;
+		  certificationContainer.appendChild(certificationAuthority);
+  
+		  const certificationDate = document.createElement("p");
+		  certificationDate.textContent = `Certification Date: ${form_certifications["certification-date"].value}`;
+		  certificationContainer.appendChild(certificationDate);
+  
+		  const removeCertificationBtn = document.createElement("button");
+		  removeCertificationBtn.classList.add("remove-certification-btn");
+		  removeCertificationBtn.textContent = "Remove Certification";
+		  removeCertificationBtn.addEventListener("click", function (event) {
+			certificationContainer.remove();
+		  });
+		  certificationContainer.appendChild(removeCertificationBtn);
+  
+		  certificationList.appendChild(certificationContainer);
+  
+		  form_certifications.reset();
+  
+		  certificationIndex++;
+		});
 
 var form_1 = document.querySelector(".form_1");
 var form_2 = document.querySelector(".form_2");

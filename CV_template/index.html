@@ -157,7 +157,7 @@
 		</div>
 		<div class="form_3 data_info" style="display: none;">
 			<h2>Work Experience</h2>
-			<form>
+			<!-- <form>
 				<div class="form_container">
                     <div class="input_wrap">
 						<label for="title">Title</label>
@@ -181,11 +181,41 @@
 						<input type="text" name="workdescription" class="input" id="workdescription">
 					</div>
 				</div>
-			</form>
+			</form> -->
+
+			<form id="work-experience-form">
+				<div class="form_container">
+				<div class="input_wrap"> 
+				<label for="company-name">Company Name:</label>
+				<input type="text" class="input" id="company-name" name="company-name" required />
+			    </div>
+
+				<div class="input_wrap"> 
+				<label for="position">Position:</label>
+				<input type="text" class="input" id="position" name="position" required />
+			    </div>
+		  
+				<div class="input_wrap"> 
+				<label for="start-date">Start Date:</label>
+				<input type="date"class="input" id="start-date" name="start-date" required />
+			    </div>
+
+				<div class="input_wrap"> 
+				<label for="end-date">End Date:</label>
+				<input type="date" class="input" id="end-date" name="end-date" required />
+			    </div>
+
+				<button type="button" id="add-work-experience-btn">Add Work Experience</button>
+				<button type="submit">Submit</button>
+			  </form>
+		  
+			  <div id="work-experience-list"></div>
 		</div>
+	</div>
+
         <div class="form_4 data_info" style="display: none;">
 			<h2>Skills </h2>
-			<form>
+			<!-- <form>
 				<div class="form_container">
 					<div class="input_wrap">
 						<label for="skill">Skill name</label>
@@ -200,11 +230,38 @@
 						<input type="text" name="skillDescription" class="input" id="skillDescription">
 					</div>
 				</div>
-			</form>
+			</form> -->
+
+			<form id="skill-form">
+				<div class="form_container">
+				<div class="input_wrap"> 
+				<label for="skill-name">Skill Name:</label>
+				<input type="text" class="input" id="skill-name" name="skill-name" required />
+			    </div>
+
+
+				<div class="input_wrap"> 
+				<label for="skill-level">Skill Level:</label>
+				<select id="skill-level" class="input" name="skill-level" required>
+				  <option value="">--Select Level--</option>
+				  <option value="Beginner">Beginner</option>
+				  <option value="Intermediate">Intermediate</option>
+				  <option value="Advanced">Advanced</option>
+				  <option value="Expert">Expert</option>
+				</select>
+			     </div>
+
+
+				<button type="button" id="add-skill-btn">Add Skill</button>
+				<button type="submit">Submit</button>
+			  </form>
+		  
+			  <div id="skill-list"></div>
+			</div>
 		</div>
 		<div class="form_5 data_info" style="display: none;">
 			<h2>Certifications </h2>
-			<form>
+			<!-- <form>
 				<div class="form_container">
 					<div class="input_wrap">
 						<label for="Certification">Certification name</label>
@@ -223,10 +280,37 @@
 						<input type="text" name="certDescription" class="input" id="certDescription">
 					</div>
 				</div>
-			</form>
-		</div>
+			</form> -->
+			<form id="certification-form">
+				<div class="form_container">
+				<div class="input_wrap"> 
+				<label for="certification-name">Certification Name:</label>
+				<input type="text" class="input" id="certification-name" name="certification-name" required />
+		    	</div>
 
-	</div>
+				<div class="input_wrap"> 
+				<label for="certification-authority">Issuing organisation</label>
+				<input type="text" class="input" id="certification-authority" name="certification-authority" required />
+		        </div>
+
+				<div class="input_wrap"> 
+				<label for="certification-date">Certification Date:</label>
+				<input type="date" class="input" id="certification-date" name="certification-date" required />
+		        </div>
+
+				<div class="input_wrap"> 
+					
+				</div>
+
+				<button type="button" id="add-certification-btn">Add Certification</button>
+				<button type="submit">Submit</button>
+		    	</div>
+			  </form>
+
+			  <div id="certification-list"></div>
+			</div>
+        </div>
+	
 	<div class="btns_wrap">
 		<div class="common_btns form_1_btns">
 			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>

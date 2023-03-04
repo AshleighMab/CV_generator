@@ -309,3 +309,29 @@ input {
 	color: red;
 	cursor: pointer;
 }
+
+.skill-container {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+  }
+
+  .remove-skill-btn {
+	display: block;
+	margin-top: 10px;
+	color: red;
+	cursor: pointer;
+  }
+
+  .certification-container {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+  }
+
+  .remove-certification-btn {
+	display: block;
+	margin-top: 10px;
+	color: red;
+	cursor: pointer;
+  }
