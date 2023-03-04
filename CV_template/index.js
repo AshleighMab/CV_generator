@@ -45,49 +45,49 @@ addEducationBtn.addEventListener("click", function (event) {
 });
 
 
-//JavaScript for adding and removing work entries
-const workform = document.getElementById("work-form");
-const workList = document.getElementById("work-list");
-const addworkBtn = document.getElementById("add-work-btn");
+// JavaScript for adding and removing education entries
+// const workform = document.getElementById("work-form");
+// const workList = document.getElementById("work-list");
+// const addworkBtn = document.getElementById("add-work-btn");
 
-let workIndex = 1;
+// let workIndex = 1;
 
-addworkBtn.addEventListener("click", function (event) {
-  event.preventDefault();
+// addworkBtn.addEventListener("click", function (event) {
+//   event.preventDefault();
 
-  const workContainer = document.createElement("div");
-  workContainer.classList.add("work-container");
+//   const workContainer = document.createElement("div");
+//   workContainer.classList.add("work-container");
 
-  const workName = document.createElement("p");
- workName.textContent = `Company name: ${form["work-name"].value}`;
-  workContainer.appendChild(workName);
+//   const workName = document.createElement("p");
+//  workName.textContent = `Company name: ${form["work-name"].value}`;
+//   workContainer.appendChild(workName);
 
-  const title = document.createElement("p");
-  title.textContent = `Title: ${form["title"].value}`;
-  workContainer.appendChild(title);
+//   const title = document.createElement("p");
+//   title.textContent = `Title: ${form["title"].value}`;
+//   workContainer.appendChild(title);
 
-  const startDatework = document.createElement("p");
-  startDatework.textContent = `Start Date: ${form["start-date-work"].value}`;
-  workContainer.appendChild(startDatework);
+//   const startDate = document.createElement("p");
+//   startDate.textContent = `Start Date: ${form["start-date"].value}`;
+//   workContainer.appendChild(startDate);
 
-  const endDatework = document.createElement("p");
-  endDatework.textContent = `End Date: ${form["end-date-work"].value}`;
-  workContainer.appendChild(endDatework);
+//   const endDate = document.createElement("p");
+//   endDate.textContent = `End Date: ${form["end-date"].value}`;
+//   workContainer.appendChild(endDate);
 
-  const removeworkBtn = document.createElement("button");
-  removeworkBtn.classList.add("remove-work-btn");
-  removeworkBtn.textContent = "Remove Work";
-  removeworkBtn.addEventListener("click", function (event) {
-  workContainer.remove();
-  });
-  workContainer.appendChild(removeworkBtn);
+//   const removeworkBtn = document.createElement("button");
+//   removeworkBtn.classList.add("remove-education-btn");
+//   removeworkBtn.textContent = "Remove Education";
+//   removeworkBtn.addEventListener("click", function (event) {
+// workContainer.remove();
+//   });
+//   workContainer.appendChild(removeworkBtn);
 
-  workList.appendChild(workContainer);
+//   workList.appendChild(workContainer);
 
-  workform.reset();
+//   workform.reset();
 
- workIndex++;
-});
+//  workIndex++;
+// });
 
 
 var form_1 = document.querySelector(".form_1");
@@ -214,8 +214,8 @@ shadow.addEventListener("click", function(){
 })
 
 
-let userInfo = JSON.parse(localStorage.getItem('UserInfo'))
-console.log(userInfo.result.surname)
-fetchUser(userInfo.result.surname)
+// let userInfo = JSON.parse(localStorage.getItem('UserInfo'))
+// console.log(userInfo.result.id)
+// fetchUser(userInfo.result.id)
 
 

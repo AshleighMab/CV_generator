@@ -296,3 +296,16 @@ input {
   position: center;
   
 }
+
+.work-experience-container {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.remove-work-experience-btn {
+	display: block;
+	margin-top: 10px;
+	color: red;
+	cursor: pointer;
+}

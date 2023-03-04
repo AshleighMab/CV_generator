@@ -15,7 +15,7 @@ async function LogInUser(loginDetails){
         body: JSON.stringify(loginDetails)
     }
     await fetch("http://localhost:21021/api/TokenAuth/Authenticate", requestOption)
-    .then(response => response.json())
+    .then(response => console.log("response",response.json()))
     .then(result => {
         localStorage.setItem('loginDetails', JSON.stringify(result))    
     })
