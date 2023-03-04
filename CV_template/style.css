@@ -192,7 +192,19 @@ body {
 
 .wrapper .btns_wrap .common_btns button.btn_back {
 	background: #DBEBC0;
+	color: black;
 }
+
+.wrapper .btns_wrap .common_btns button.btn_next {
+	background: #DBEBC0;
+	color: black;
+}
+
+.wrapper .btns_wrap .common_btns button.btn_done {
+	background: #DBEBC0;
+	color: black;
+}
+
 
 .wrapper .btns_wrap .common_btns button.btn_next .icon {
 	display: flex;
@@ -294,7 +306,8 @@ input {
 
 #add-education-btn{
   position: center;
-  
+  background-color: #DBEBC0;
+  height: 40px;
 }
 
 .work-experience-container {
