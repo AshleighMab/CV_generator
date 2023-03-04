@@ -78,7 +78,7 @@ body {
 	width: 50px;
 	height: 50px;
 	background: #B279A7;
-	color: white;
+	color: black;
 	text-align: center;
 	line-height: 50px;
 	border-radius: 50%;
@@ -290,11 +290,20 @@ input {
 	margin-bottom: 10px;
 }
 
+.additions{
+	margin: 30px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	justify-content: space-between;
+
+}
+
 .education-container {
 	border: 1px solid #ccc;
 	padding: 10px;
 	margin-bottom: 10px;
-
+    
 }
 
 .remove-education-btn {
@@ -304,11 +313,6 @@ input {
 	cursor: pointer;
 }
 
-#add-education-btn{
-  position: center;
-  background-color: #DBEBC0;
-  height: 40px;
-}
 
 .work-experience-container {
 	border: 1px solid #ccc;
@@ -319,7 +323,7 @@ input {
 .remove-work-experience-btn {
 	display: block;
 	margin-top: 10px;
-	color: red;
+	color: black;
 	cursor: pointer;
 }
 
