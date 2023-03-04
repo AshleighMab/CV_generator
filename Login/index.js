@@ -125,16 +125,14 @@ if (loginform) {
         console.log("values ::", loginData)
         LogInUser(loginData)
             .then(response => {
-                debugger
                 console.log("respon",response)
                 console.log("checking something");
-                     location.href = './../CV_template/index.html'
+                     //location.href = './../CV_template/index.html'
+                // if (response.userNameOrEmailAddress == loginData.userNameOrEmailAddress && response.password == loginData.password) {
+                //     console.log("checking condition");
 
-                if (response.userNameOrEmailAddress == loginData.userNameOrEmailAddress && response.password == loginData.password) {
-                    console.log("checking condition");
-
-                    location.href = './../CV_template/index.html'
-                } 
+                //     location.href = './../CV_template/index.html'
+                // } 
             })
             .catch(error => {
                 // console.error(error)

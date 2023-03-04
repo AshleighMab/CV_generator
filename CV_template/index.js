@@ -1,4 +1,44 @@
 import { fetchUser } from "../apis/users.js";
+import {createPerson} from './../apis/person.js'
+import {token_Key} from './../appConstants/index.js'
+import {setToken} from './../utils.js'
+
+
+// let title = document.getElementById('title');
+// let fname = document.getElementById('fname');
+let lname = document.getElementById('surname');
+let dob = document.getElementById('dob');
+let race = document.getElementById('race');
+let email = document.getElementById('email');
+let bio = document.getElementById('about');
+let cellphone = document.getElementById('cell');
+let address = document.getElementById('address');
+
+
+let form1button = document.getElementById('form1');
+
+setToken(token_Key,"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6ImQ3N2RkMGVhLTNlMmQtZjhjNS1mODAzLTNhMDlhOWEyYmU4NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6ImM0YTVkMmY3LTE0MzctNDRmMC05OTdjLTMwNGUwYTEzZDdlNSIsImlhdCI6MTY3NzkyNjE0NCwibmJmIjoxNjc3OTI2MTQ0LCJleHAiOjE2NzgwMTI1NDQsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.f9kUVJU2kkRP_K3U7IGIodOcv7nIrA7P-yAf0vgk_4Y");
+
+
+form1button.addEventListener('click', e=>{
+    e.preventDefault(); // prevent form submission
+
+    
+    const persondata={
+		title: 1,
+		dateOfBirth: dob.value,
+		gender: 0,
+		race: race.value,
+		identificationNumber: "123456789012",
+		cellNumber: cellphone.value,
+		address: address.value,
+		userId: 30,
+    }
+
+    console.log("values ::",persondata)
+    createPerson(persondata)
+})
+
 
 // JavaScript for adding and removing education entries
 const form_education = document.getElementById("education-form");
@@ -287,8 +327,8 @@ shadow.addEventListener("click", function(){
 })
 
 
-// let userInfo = JSON.parse(localStorage.getItem('UserInfo'))
-// console.log(userInfo.result.id)
-// fetchUser(userInfo.result.id)
+let userInfo = JSON.parse(localStorage.getItem('UserInfo'))
+console.log(userInfo.result.id)
+fetchUser(userInfo.result.id)
 
 

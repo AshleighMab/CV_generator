@@ -26,7 +26,7 @@ function createUser(userDetails){
 }
 
 
-function fetchUser(name){
+function fetchUser(id){
     console.log('fetching user')
       var requestOptions = {
         method: 'GET',
@@ -36,7 +36,7 @@ function fetchUser(name){
           'Content-Type': 'application/json;charset=UTF-8'
       }
       };
-      fetch(`http://localhost:21021/api/services/app/User/Get?name=${name}`, requestOptions)
+      fetch(`http://localhost:21021/api/services/app/User/Get?name=${id}`, requestOptions)
         .then(response => response.json())
         .then(result => {
             console.log(result)        

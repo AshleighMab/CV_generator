@@ -14,16 +14,14 @@ function createPerson(personDetails){
       },
         body: JSON.stringify(personDetails)
       };
-      fetch("http://localhost:21021/api/services/app/User/Create", requestOptions)
+      fetch("http://localhost:21021/api/services/app/Person/CreatePerson", requestOptions)
         .then(response => response.json())
         .then(result => {
-            localStorage.setItem('UserInfo', JSON.stringify(result))
-            location.href = './../CV_template/index.html'
-            
+            localStorage.setItem('UserInfo', JSON.stringify(result))          
         })
         .catch(error => alert('error', error));
         
-        console.log('end of create user')
+        console.log('end of create person')
 }
 
 // function fetchUser(Id){
@@ -46,5 +44,5 @@ function createPerson(personDetails){
         
 //         console.log('end of create user')
 // }
-// export{fetchUser}
-// export {createUser}
+
+export{createPerson}
