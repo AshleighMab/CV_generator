@@ -7,11 +7,7 @@ import {createEducation} from "./../apis/education.js"
 import { createResume } from "./../apis/resume.js";
 import { createSection } from "./../apis/section.js";
 
-// let title = document.getElementById('title');
-// let fname = document.getElementById('fname');
-// let lname = document.getElementById('surname');
-// let email = document.getElementById('email');
-// let bio = document.getElementById('about');
+
 let dob = document.getElementById('dob');
 let race = document.getElementById('race');
 let cellphone = document.getElementById('cell');
@@ -76,64 +72,35 @@ createResumeBtn.addEventListener('click', e => {
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+let schoolname = document.getElementById('schoolname');
+let degree = document.getElementById('degree');
+let major = document.getElementById('major');
+let enddate = document.getElementById('end-date');
 
-let btnEducation = document.getElementById('btnEducation');
 
+let btnEducation = document.getElementById('add-education-btn');
 
 btnEducation.addEventListener('click', e => {
 	e.preventDefault(); 
 
+	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
+	console.log('passed edu' , sectionInfo.result.id)
 
 	const educationdata = {
-		title: title.value,
-		dateOfBirth: dob.value,
-		gender: gender.value,
-		race: race.value,
-		identificationNumber: idnum.value,
-		cellNumber: cellphone.value,
-		address: address.value,
-		userId: localStorage.getItem("UserId"),
+		
+			degree: degree.value,
+			schoolName: schoolname.value,
+			graduationDate: enddate.value,
+			major: major.value,
+			sectionId: sectionInfo.result.id,
+			
+		  
 	}
-
-	console.log("values ::", educationdata)
+	console.log("education values ::", educationdata)
 	createEducation(educationdata)
-	console.log(educationdata.userId);
+	console.log(educationdata.sectionId);
 
 })
-
-// let lname = document.getElementById('surname');
-// let dob = document.getElementById('dob');
-// let race = document.getElementById('race');
-// let email = document.getElementById('email');
-// let bio = document.getElementById('about');
-// let cellphone = document.getElementById('cell');
-// let title = document.getElementById('title');
-// let address = document.getElementById('address');
-
-
-// let form1button = document.getElementById('form1');
-
-// setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6ImQ3N2RkMGVhLTNlMmQtZjhjNS1mODAzLTNhMDlhOWEyYmU4NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6ImM0YTVkMmY3LTE0MzctNDRmMC05OTdjLTMwNGUwYTEzZDdlNSIsImlhdCI6MTY3NzkyNjE0NCwibmJmIjoxNjc3OTI2MTQ0LCJleHAiOjE2NzgwMTI1NDQsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.f9kUVJU2kkRP_K3U7IGIodOcv7nIrA7P-yAf0vgk_4Y");
-
-
-// form1button.addEventListener('click', e => {
-// 	e.preventDefault(); // prevent form submission
-
-
-// 	const persondata = {
-// 		title: title.value,
-// 		dateOfBirth: dob.value,
-// 		gender: 0,
-// 		race: race.value,
-// 		identificationNumber: "123456789012",
-// 		cellNumber: cellphone.value,
-// 		address: address.value,
-// 		userId: localStorage.getItem("UserId"),
-// 	}
-
-// 	console.log("values ::", persondata)
-// 	createPerson(persondata)
-// })
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -159,9 +126,9 @@ addEducationBtn.addEventListener("click", function (event) {
 	degree.textContent = `Degree: ${form_education["degree"].value}`;
 	educationContainer.appendChild(degree);
 
-	const startDate = document.createElement("p");
-	startDate.textContent = `Start Date: ${form_education["start-date"].value}`;
-	educationContainer.appendChild(startDate);
+	const major = document.createElement("p");
+	major.textContent = `Major: ${form_education["major"].value}`;
+	educationContainer.appendChild(major);
 
 	const endDate = document.createElement("p");
 	endDate.textContent = `End Date: ${form_education["end-date"].value}`;
