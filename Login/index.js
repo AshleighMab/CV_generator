@@ -21,9 +21,14 @@ const LoginPage = async (Loginform)=>{
                     console.log("InsideIF",localStorage.getItem("AccessToken"))
                     location.href = './../CV_template/index.html'
                 } 
+                if(localStorage.getItem()){
+                    
+                }
             })
             .catch(error => {
-                alert(error.message)
+                const errorMessage = document.querySelector("#error-message");
+                errorMessage.innerHTML = "Incorrect email or password.";
+                errorMessage.style.color = "red";
             });
         })
     }

@@ -5,7 +5,7 @@ import { setToken } from './../utils.js'
 import { fetchPerson } from "./../apis/person.js"
 import {createEducation} from "./../apis/education.js"
 import { createResume } from "./../apis/resume.js";
-import { createSection } from "../apis/section.js";
+import { createSection } from "./../apis/section.js";
 
 // let title = document.getElementById('title');
 // let fname = document.getElementById('fname');
@@ -21,14 +21,13 @@ let gender = document.getElementById('gender');
 let idnum = document.getElementById('idnum');
 
 
-let form1button = document.getElementById('form1');
+let btnpersonalDetails = document.getElementById('btnpersonalDetails');
 
 setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6ImQ3N2RkMGVhLTNlMmQtZjhjNS1mODAzLTNhMDlhOWEyYmU4NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6IjJlOWNmZjdhLTU2MGYtNDVhMy1hMjc5LWM1YmViNzI3OTNkYSIsImlhdCI6MTY3ODAxMDQ3NywibmJmIjoxNjc4MDEwNDc3LCJleHAiOjE2NzgwOTY4NzcsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.afDf4-rQFPemn2HbC7afPdBRbPN8tltomGGjyD5EbSk");
 
 
-form1button.addEventListener('click', e => {
-	e.preventDefault(); // prevent form submission
-
+btnpersonalDetails.addEventListener('click', e => {
+	e.preventDefault();
 
 	const persondata = {
 		title: title.value,
@@ -48,8 +47,6 @@ form1button.addEventListener('click', e => {
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 let createResumeBtn = document.getElementById('createResumeBtn');
-
-
 
 
 createResumeBtn.addEventListener('click', e => {
@@ -79,6 +76,30 @@ createResumeBtn.addEventListener('click', e => {
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+let btnEducation = document.getElementById('btnEducation');
+
+
+btnEducation.addEventListener('click', e => {
+	e.preventDefault(); 
+
+
+	const educationdata = {
+		title: title.value,
+		dateOfBirth: dob.value,
+		gender: gender.value,
+		race: race.value,
+		identificationNumber: idnum.value,
+		cellNumber: cellphone.value,
+		address: address.value,
+		userId: localStorage.getItem("UserId"),
+	}
+
+	console.log("values ::", educationdata)
+	createEducation(educationdata)
+	console.log(educationdata.userId);
+
+})
 
 // let lname = document.getElementById('surname');
 // let dob = document.getElementById('dob');

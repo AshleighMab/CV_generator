@@ -155,8 +155,8 @@ header .navbar ul li a:hover{
 
 .about .row .info{
     flex:1 1 48rem;
-    padding:10px;
-    padding-left: 6rem;
+    justify-content: center;
+    align-content: center;
 }
 
 .about .row .info h3{
@@ -167,8 +167,8 @@ header .navbar ul li a:hover{
 }
 
 .about .row .info h3 span{
-    color: black;
-    background: white;
+    justify-content: center;
+   align-items: center;
     padding:0 .5rem;
     margin-right: 40px
 }
@@ -190,7 +190,6 @@ header .navbar ul li a:hover{
 
 .about .row .counter .box span{
     font-size: 4rem;
-    /* color:var(--yellow); */
 }
 
 .about .row .counter .box h3{
@@ -245,7 +244,6 @@ header .navbar ul li a:hover{
     text-align: center;
     font-size: 2rem;
     color:#fff;
-    /* background:var(--yellow); */
 }
 
 .portfolio .box-container{
@@ -283,10 +281,9 @@ header .navbar ul li a:hover{
 }
 
 .contact .row .content{
-  display: flex;
+margin-top: 50px;
   align-items: center;
   justify-content: center;
-    padding-bottom: 0;
 }
 
 .contact .row .content .title{
@@ -307,7 +304,6 @@ header .navbar ul li a:hover{
 
 .contact .row .content .info h3 i{
     padding-right: 1rem;
-    /* color:var(--yellow); */
 }
 
 .top{
@@ -317,7 +313,14 @@ header .navbar ul li a:hover{
     display: none;
 }
 
-
+.maindetailcontainer{
+    margin-top: 100px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
 @media (max-width:1200px){
 
     html{

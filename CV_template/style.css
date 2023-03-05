@@ -352,3 +352,9 @@ input {
 	color: red;
 	cursor: pointer;
   }
+
+  .btnpersonalDetails{
+	display:flex;
+	position: left;
+	align-items: left;
+  }
