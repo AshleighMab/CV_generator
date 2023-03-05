@@ -1,38 +1,16 @@
-$(document).ready(function(){
 
-    $('#menu').click(function(){
-      $(this).toggleClass('fa-times');
-      $('header').toggleClass('toggle');
-    });
-  
-    $(window).on('scroll load',function(){
-  
-      $('#menu').removeClass('fa-times');
-      $('header').removeClass('toggle');
-  
-      if($(window).scrollTop() > 0){
-        $('.top').show();
-      }else{
-        $('.top').hide();
-      }
-  
-    });
-  
-    // smooth scrolling 
-  
-    $('a[href*="#"]').on('click',function(e){
-  
-      e.preventDefault();
-  
-      $('html, body').animate({
-  
-        scrollTop : $($(this).attr('href')).offset().top,
-  
-      },
-        500, 
-        'linear'
-      );
-  
-    });
-  
-  });
+
+import { fetchUser } from "../apis/users";
+
+let userInfo = JSON.parse(localStorage.getItem('UserInfo'))
+console.log(userInfo.result.id)
+
+
+  function addingName(){
+    fetchUser(userInfo);
+    return userInfo.result.Name;
+}
+
+// fetchUser(userInfo.result.id)
+const nameplaceholder = document.querySelector(".nameplaceholder");
+nameplaceholder.innerHTML=addingName();

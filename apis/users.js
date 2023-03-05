@@ -36,7 +36,7 @@ function fetchUser(id){
           'Content-Type': 'application/json;charset=UTF-8'
       }
       };
-      fetch(`http://localhost:21021/api/services/app/User/Get?name=${id}`, requestOptions)
+      fetch(`http://localhost:21021/api/services/app/User/Get?id=${id}`, requestOptions)
         .then(response => response.json())
         .then(result => {
             console.log(result)        

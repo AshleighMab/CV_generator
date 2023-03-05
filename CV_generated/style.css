@@ -1,11 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
-
-:root{
-    --yellow: #DBEBC0;
-}
-
 *{
-    font-family: 'Nunito', sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
     text-decoration: none;
@@ -14,46 +7,24 @@
     transition: all .2s linear;
 }
 
-*::selection{
-    background:#DBEBC0;
-    color:#333;
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-
-html::-webkit-scrollbar{
-    width:1.4rem;
-}
-
-html::-webkit-scrollbar-track{
-    background:#222;
-}
-
-html::-webkit-scrollbar-thumb{
-    background:#DBEBC0;
-}
-
 body{
     background:#111;
-    overflow-x: hidden;
-    padding-left: 35rem;
+    /* overflow-x: hidden; */
+    padding-left: 400px;
 }
 
 section{
     min-height: 100vh;
-    padding:1rem;
+    padding:40px;
 }
 
 .btn{
-    padding:.7rem 3rem;
+    padding: 50px;
     background:#333;
     color:#fff;
     cursor: pointer;
-    margin-top: 1rem;
-    font-size: 2rem;
+    margin-top: 16px;
+    font-size: 32px;
     border-radius: 5rem;
 }
 
@@ -84,7 +55,7 @@ header{
     top:0; left:0;
     z-index: 1000;
     height:100%;
-    width:35rem;
+    width:400px;
     background:#1a1a1a;
     display: flex;
     align-items: center;
@@ -94,12 +65,11 @@ header{
 }
 
 header .user img{
-    height:17rem;
-    width:17rem;
+    height:60px;
+    width:60px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
-    border:.7rem solid var(--yellow);
+    margin-bottom: 16px;
 }
 
 header .user .name{
@@ -118,17 +88,17 @@ header .navbar{
 
 header .navbar ul{
     list-style: none;
-    padding:1rem 3rem;
+    padding:30px;
 }
 
 
 header .navbar ul li a{
     display: block;
-    padding:1rem;
-    margin:1.5rem 0;
+  padding: 5px;
+    margin: 30px;
     background: #DBEBC0;
     color: black;
-    font-size: 2rem;
+    font-size: 30px;
     border-radius: 5rem;
 }
 
@@ -185,20 +155,22 @@ header .navbar ul li a:hover{
 
 .about .row .info{
     flex:1 1 48rem;
-    padding:2rem 1rem;
+    padding:10px;
     padding-left: 6rem;
 }
 
 .about .row .info h3{
     font-size: 2rem;
-    color:var(--yellow);
+    color:white;
     padding:1rem 0;
     font-weight: normal;
 }
 
 .about .row .info h3 span{
-    color:#eee;
+    color: black;
+    background: white;
     padding:0 .5rem;
+    margin-right: 40px
 }
 
 .about .row .counter{
@@ -209,7 +181,7 @@ header .navbar ul li a:hover{
 }
 
 .about .row .counter .box{
-    width:20rem;
+    width:150px;
     background: #DBEBC0;
     text-align: center;
     padding: 2rem;
@@ -218,12 +190,12 @@ header .navbar ul li a:hover{
 
 .about .row .counter .box span{
     font-size: 4rem;
-    color:var(--yellow);
+    /* color:var(--yellow); */
 }
 
 .about .row .counter .box h3{
     font-size: 2rem;
-    color: black;
+    color: white;
 }
 
 .education .box-container{
@@ -236,7 +208,7 @@ header .navbar ul li a:hover{
 }
 
 .education .box-container .box{
-    width:27rem;
+    width:400px;
     margin:4rem 1rem;
     padding-left: 4rem;
     border-left: .2rem solid #fff;
@@ -245,8 +217,8 @@ header .navbar ul li a:hover{
 
 .education .box-container .box span{
     font-size: 1.3rem;
-    background:#222;
-    color:#fff;
+    background:white;
+    color: black;
     border-radius: 5rem;
     padding:.5rem 2.5rem;
 }
@@ -273,7 +245,7 @@ header .navbar ul li a:hover{
     text-align: center;
     font-size: 2rem;
     color:#fff;
-    background:var(--yellow);
+    /* background:var(--yellow); */
 }
 
 .portfolio .box-container{
@@ -311,8 +283,9 @@ header .navbar ul li a:hover{
 }
 
 .contact .row .content{
-    flex:1 1 30rem;
-    padding:4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
     padding-bottom: 0;
 }
 
@@ -334,7 +307,7 @@ header .navbar ul li a:hover{
 
 .contact .row .content .info h3 i{
     padding-right: 1rem;
-    color:var(--yellow);
+    /* color:var(--yellow); */
 }
 
 .top{
