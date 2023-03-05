@@ -155,11 +155,11 @@
 
 						<div class="input_wrap">
 							<label for="end-date">End Date:</label>
-							<input type="date" class="input" id="end-date" name="end-date" required />
+							<input type="date" class="input" id="work-end-date" name="end-date" required />
 						</div>
 
 						<button type="button" id="add-work-experience-btn">Add Work Experience</button>
-						<button type="submit">Submit</button>
+						<button type="submit" id="worksubmit">Submit</button>
 				</form>
 
 				<div class="additions" id="work-experience-list"></div>
@@ -197,16 +197,16 @@
 						<label for="skill-level">Skill Level:</label>
 						<select id="skill-level" class="input" name="skill-level" required>
 							<option value="">--Select Level--</option>
-							<option value="Beginner">Beginner</option>
-							<option value="Intermediate">Intermediate</option>
-							<option value="Advanced">Advanced</option>
-							<option value="Expert">Expert</option>
+							<option value="0">Beginner</option>
+							<option value="1">Intermediate</option>
+							<option value="2">Advanced</option>
+							<option value="3">Expert</option>
 						</select>
 					</div>
 
 
 					<button type="button" id="add-skill-btn">Add Skill</button>
-					<button type="submit">Submit</button>
+					<button type="submit" id="skillsubmit">Submit</button>
 			</form>
 
 			<div id="skill-list"></div>
@@ -257,7 +257,7 @@
 				</div>
 
 				<button type="button" id="add-certification-btn">Add Certification</button>
-				<button type="submit">Submit</button>
+				<button type="submit" id="certsubmit" >Submit</button>
 			</div>
 		</form>
 

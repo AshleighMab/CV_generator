@@ -8,7 +8,7 @@ console.log("user Id:",personInfo.result.id)
 fetchUser(personInfo.result.id)
 
 function addingName(){
-  fetchUser(userInfo);
+  fetchUser(UserInfo);
   return userInfo.result.id;
 }
 

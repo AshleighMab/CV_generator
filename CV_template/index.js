@@ -6,7 +6,9 @@ import { fetchPerson } from "./../apis/person.js"
 import {createEducation} from "./../apis/education.js"
 import { createResume } from "./../apis/resume.js";
 import { createSection } from "./../apis/section.js";
-
+import { createWork } from "./../apis/work.js";
+import { createSkill} from "./../apis/skill.js";
+import { createCert } from "./../apis/certificate.js";
 
 let dob = document.getElementById('dob');
 let race = document.getElementById('race');
@@ -78,7 +80,7 @@ let major = document.getElementById('major');
 let enddate = document.getElementById('end-date');
 
 
-let btnEducation = document.getElementById('add-education-btn');
+let btnEducation = document.getElementById('eddu_submit');
 
 btnEducation.addEventListener('click', e => {
 	e.preventDefault(); 
@@ -104,6 +106,83 @@ btnEducation.addEventListener('click', e => {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
+let companyname = document.getElementById('company-name');
+let position = document.getElementById('position');
+let startdate = document.getElementById('start-date');
+let workenddate = document.getElementById('work-end-date');
+
+
+let btnWork = document.getElementById('worksubmit');
+
+btnWork.addEventListener('click', e => {
+	e.preventDefault(); 
+
+	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
+	console.log('passed edu' , sectionInfo.result.id)
+
+	const workdata = {
+		title: position.value,
+        companyName: companyname.value,
+	    startDate: startdate.value,
+	    endDate: workenddate.value,
+        sectionId: sectionInfo.result.id,
+					  
+	}
+	console.log("work values ::", workdata)
+	createWork(workdata)
+	console.log(workdata.sectionId);
+
+})
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+let skillname = document.getElementById('skill-name');
+let skilllevel = document.getElementById('skill-level');
+
+let btnSkill = document.getElementById('skillsubmit');
+
+btnSkill.addEventListener('click', e => {
+	e.preventDefault(); 
+
+	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
+	console.log('passed edu' , sectionInfo.result.id)
+
+	const skilldata = {
+			name: skillname.value,
+			proficiencyLevel: skilllevel.value,
+			sectionId:  sectionInfo.result.id,					  
+	}
+	console.log("skill values ::", skilldata)
+	createSkill(skilldata)
+	console.log(skilldata.sectionId);
+
+})
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+let certname = document.getElementById('certification-name');
+let certorg = document.getElementById('certification-authority');
+let certdate = document.getElementById('certification-date');
+
+let btnCert = document.getElementById('certsubmit');
+
+btnCert.addEventListener('click', e => {
+	e.preventDefault(); 
+
+	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
+	console.log('passed cert' , sectionInfo.result.id)
+
+	const certdata = {
+		name: certname.value,
+		issuingOrganization: certorg.value,
+		certificationDate: certdate.value,
+	    sectionId: sectionInfo.result.id,					  
+	}
+	console.log("cert values ::", certdata)
+	createCert(certdata)
+	console.log(certdata.sectionId);
+
+})
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Adding and removing education entries
 const form_education = document.getElementById("education-form");
