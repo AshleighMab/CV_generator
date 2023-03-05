@@ -67,10 +67,7 @@
 							<option value="0">Other</option>
 						</select>
 					</div>
-                    <!-- <div class="input_wrap">
-						<label for="surname">Surname</label>
-						<input type="text" name="surname" class="input" id="surname">
-					</div> -->
+              
 					<div class="input_wrap">
 						<label for="race">Race</label>
 						<select class="input" id="race" name="race" required>
@@ -113,33 +110,7 @@
 		</div>
 		<div class="form_2 data_info" id="eduform" style="display: none;">
 			<h2>Education</h2>
-			<!-- <form>
-				<div class="form_container" id="education-sections">
-					<div class="input_wrap">
-					  <label for="institution-0">Institution:</label>
-					  <input type="text" class="input" id="institution-0" name="institution" >
-					</div>
 
-					  <div class="input_wrap">
-					  <label for="degree-0">Degree or Program:</label>
-					  <input type="text"  class="input" id="degree-0" name="degree" >
-					</div>
-
-					  <div class="input_wrap">
-					  <label for="start-date-0">Start Date:</label>
-					  <input type="date" class="input" id="start-date-0" name="start-date" >
-					  </div>
-
-					<div class="input_wrap">
-					  <label for="end-date-0">End Date:</label>
-					  <input type="date" class="input" id="end-date-0" name="end-date" >
-					</div>
-
-					<div class="input_wrap">
-					  <button type="button" class="input" class="add-education-btn">Add another education</button>
-					</div>
-				</div>
-			</form> -->
 			<form id="education-form">
 				<div class="form_container">
 				<div class="input_wrap"> 
@@ -329,7 +300,7 @@
 		<div class="common_btns form_1_btns">
 		
 			<button type="button" id="form1">Save <span class="icon"></span></button>
-			<button type="button" id="createResumeBtn" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+			<button type="button"  id="createResumeBtn" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
 		</div>
 		<div class="common_btns form_2_btns" style="display: none;">
 			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
@@ -355,8 +326,11 @@
 	<div class="success_wrap">
 		<span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
 		<p>Your CV has been generated</p>
+		<p class="form_text">
+			<a class="form_link" href="./../CV_generated/index.html" id="template">View CV</a>
+		</p>
 	</div>
-	<button type="button" class="btn_done">View CV</button>
+
 </div>
 
 <script type="module" src="./../CV_template/index.js"></script>

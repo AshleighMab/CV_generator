@@ -5,6 +5,7 @@ import { setToken } from './../utils.js'
 import { fetchPerson } from "./../apis/person.js"
 import {createEducation} from "./../apis/education.js"
 import { createResume } from "./../apis/resume.js";
+import { createSection } from "../apis/section.js";
 
 // let title = document.getElementById('title');
 // let fname = document.getElementById('fname');
@@ -42,36 +43,43 @@ form1button.addEventListener('click', e => {
 
 	console.log("values ::", persondata)
 	createPerson(persondata)
+	console.log(persondata.userId);
 
 })
-
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 let createResumeBtn = document.getElementById('createResumeBtn');
 
-setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6ImQ3N2RkMGVhLTNlMmQtZjhjNS1mODAzLTNhMDlhOWEyYmU4NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6IjJlOWNmZjdhLTU2MGYtNDVhMy1hMjc5LWM1YmViNzI3OTNkYSIsImlhdCI6MTY3ODAxMDQ3NywibmJmIjoxNjc4MDEwNDc3LCJleHAiOjE2NzgwOTY4NzcsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.afDf4-rQFPemn2HbC7afPdBRbPN8tltomGGjyD5EbSk");
+
+
 
 createResumeBtn.addEventListener('click', e => {
 	e.preventDefault(); 
 
+	let personInfo = JSON.parse(localStorage.getItem('UserInfo'))
+	console.log('passed' , personInfo.result.id)
 
-	const resumedata ={
-		
-		name: localStorage.getItem("FirstName"),
-		personId:  localStorage.getItem("Id") ,
-		
+	const resumedata ={	
+		name: "Name",
+		personId:  personInfo.result.id
 	}
 	console.log("Resume details ::", resumedata)
-	createResume(resumedata)
+    createResume(resumedata)
 
+	
+	let sectionInfo = JSON.parse(localStorage.getItem('ResumeInfo'))
+	console.log('passed' , sectionInfo.result.id)
+
+	const Sectiondata ={	
+
+		title: 1,
+		resumeId: sectionInfo.result.id,
+	}
+	console.log("Section details ::", Sectiondata)
+    createSection(Sectiondata)
 })
 
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////
+
 // let lname = document.getElementById('surname');
 // let dob = document.getElementById('dob');
 // let race = document.getElementById('race');
@@ -401,9 +409,9 @@ shadow.addEventListener("click", function () {
 // let id = obj.result.id
 
 // let userInfo = JSON.parse(localStorage.getItem('UserInfo'))
-// console.log(userInfo.result.id)
+// console.log("person Id:",userInfo.result.id)
 // fetchUser(userInfo.result.id)
 
-//let personInfo = JSON.parse(localStorage.getItem('UserInfo'))
-console.log("person info", fetchPerson)
-fetchUser(localStorage.getItem("UserId"))
+// let personInfo = JSON.parse(localStorage.getItem('UserInfo'))
+// console.log("person info", fetchPerson)
+// fetchUser(localStorage.getItem(personInfo.reult["UserId"]))
