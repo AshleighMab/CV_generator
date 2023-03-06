@@ -17,7 +17,11 @@ function createSection(sectionDetails){
       fetch("http://localhost:21021/api/services/app/Section/CreateSection", requestOptions)
         .then(response => response.json())
         .then(result => {
-            localStorage.setItem('SectionInfo', JSON.stringify(result))         
+          if(result.success){
+            localStorage.setItem('SectionInfo', JSON.stringify(result))   
+          }else{
+            alert('Error Occurred!');
+          }      
         })
         .catch(error => alert('error', error));
         

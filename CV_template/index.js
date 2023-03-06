@@ -21,26 +21,43 @@ let idnum = document.getElementById('idnum');
 
 let btnpersonalDetails = document.getElementById('btnpersonalDetails');
 
-setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6ImQ3N2RkMGVhLTNlMmQtZjhjNS1mODAzLTNhMDlhOWEyYmU4NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6IjJlOWNmZjdhLTU2MGYtNDVhMy1hMjc5LWM1YmViNzI3OTNkYSIsImlhdCI6MTY3ODAxMDQ3NywibmJmIjoxNjc4MDEwNDc3LCJleHAiOjE2NzgwOTY4NzcsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.afDf4-rQFPemn2HbC7afPdBRbPN8tltomGGjyD5EbSk");
+setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6ImQ3N2RkMGVhLTNlMmQtZjhjNS1mODAzLTNhMDlhOWEyYmU4NyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6Ijk2MDk1YzA3LTMwMGUtNGM3MS04ZTY3LTM0Y2Q2YjE3ZjkzNCIsImlhdCI6MTY3ODExODc1OSwibmJmIjoxNjc4MTE4NzU5LCJleHAiOjE2NzgyMDUxNTksImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.R7TgoOi0ODJ7GPBLAlZrDvjoH2XNBBLThod-CDEbORw");
 
 
 btnpersonalDetails.addEventListener('click', e => {
 	e.preventDefault();
 
-	const persondata = {
-		title: title.value,
-		dateOfBirth: dob.value,
-		gender: gender.value,
-		race: race.value,
-		identificationNumber: idnum.value,
-		cellNumber: cellphone.value,
-		address: address.value,
-		userId: localStorage.getItem("UserId"),
-	}
+	var formData =  new FormData();
+	formData.append('title', title.value ?? '')
+	formData.append('dateOfBirth', dob.value ?? '')
+	formData.append('gender', gender.value ?? 1)
+	formData.append('race', race.value ?? 1)
+	formData.append('identificationNumber', idnum.value ?? '')
+	formData.append('cellNumber', cellphone.value ?? '')
+	formData.append('address', address.value ?? '')
+	formData.append('userId', localStorage.getItem("UserId"))
 
-	console.log("values ::", persondata)
-	createPerson(persondata)
-	console.log(persondata.userId);
+	
+	// formData.append('file', null)
+	
+	// const persondata = {
+	// 	title: title.value,
+	// 	dateOfBirth: dob.value,
+	// 	gender: gender.value,
+	// 	race: race.value,
+	// 	identificationNumber: idnum.value,
+	// 	cellNumber: cellphone.value,
+	// 	address: address.value,
+	// 	userId: localStorage.getItem("UserId"),
+	// }
+
+	console.log("values ::", formData)
+	for (const pair of formData.entries()) {
+		console.log(`${pair[0]}, ${pair[1]}`);
+	  }
+	
+	createPerson(formData)
+	// console.log(persondata.userId);
 
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,50 +77,108 @@ createResumeBtn.addEventListener('click', e => {
 	console.log("Resume details ::", resumedata)
     createResume(resumedata)
 
+     //////////////////////////////////////////////////////////////
 	
-	let sectionInfo = JSON.parse(localStorage.getItem('ResumeInfo'))
-	console.log('passed' , sectionInfo.result.id)
+	// let sectionInfo = JSON.parse(localStorage.getItem('ResumeInfo'))
+	// console.log('passed' , sectionInfo.result.id)
 
-	const Sectiondata ={	
+	// const Sectiondata ={	
 
-		title: 1,
-		resumeId: sectionInfo.result.id,
-	}
-	console.log("Section details ::", Sectiondata)
-    createSection(Sectiondata)
+	// 	title: 1,
+	// 	resumeId: sectionInfo.result.id,
+	// }
+	// console.log("Section details ::", Sectiondata)
+    // createSection(Sectiondata)
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-let schoolname = document.getElementById('schoolname');
-let degree = document.getElementById('degree');
-let major = document.getElementById('major');
-let enddate = document.getElementById('end-date');
+//Adding and removing education entries
+const form_education = document.getElementById("education-form");
+const educationList = document.getElementById("education-list");
+const addEducationBtn = document.getElementById("add-education-btn");
+const eduList = [];
 
+let educationIndex = 1;
+
+addEducationBtn.addEventListener("click", function (event) {
+	event.preventDefault();
+	
+	const educationContainer = document.createElement("div");
+	educationContainer.classList.add("education-container");
+
+	const schoolName = document.createElement("p");
+	schoolName.textContent = `${form_education["school-name"].value}`;
+	educationContainer.appendChild(schoolName);
+
+	const degree = document.createElement("p");
+	degree.textContent = `${form_education["degree"].value}`;
+	educationContainer.appendChild(degree);
+
+	const major = document.createElement("p");
+	major.textContent = `${form_education["major"].value}`;
+	educationContainer.appendChild(major);
+
+	const GraduationDate = document.createElement("p");
+	GraduationDate.textContent = `${form_education["end-date"].value}`;
+	educationContainer.appendChild(GraduationDate);
+
+	const removeEducationBtn = document.createElement("button");
+	removeEducationBtn.classList.add("remove-education-btn");
+	removeEducationBtn.textContent = "Remove Education";
+	removeEducationBtn.addEventListener("click", function (event) {
+		educationContainer.remove();
+	});
+	educationContainer.appendChild(removeEducationBtn);
+	educationList.appendChild(educationContainer);
+	eduList.push({
+		schoolName : schoolName.textContent,
+   		degree: degree.textContent,
+   		GraduationDate: GraduationDate.textContent,
+   		major: major.textContent,
+   		
+
+	})
+	form_education.reset();
+
+	educationIndex++;
+});
 
 let btnEducation = document.getElementById('eddu_submit');
 
 btnEducation.addEventListener('click', e => {
 	e.preventDefault(); 
 
-	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
-	console.log('passed edu' , sectionInfo.result.id)
+	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
+	const Sectiondata ={	
 
-	const educationdata = {
+		title: 1,
+		resumeId: resume.result.id,
+	}
+	console.log("Section details ::", Sectiondata)
+    createSection(Sectiondata)
+
+	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
+	eduList.map((item)=>{
+		item.sectionId = sectionInfo.result.id;
+		createEducation(item)
+	   });
+	// console.log('passed edu' , sectionInfo.result.id)
+
+	// const educationdata = {
 		
-			degree: degree.value,
-			schoolName: schoolname.value,
-			graduationDate: enddate.value,
-			major: major.value,
-			sectionId: sectionInfo.result.id,
+	// 		degree: degree.value,
+	// 		schoolName: schoolname.value,
+	// 		graduationDate: enddate.value,
+	// 		major: major.value,
+	// 		sectionId: sectionInfo.result.id,
 			
 		  
-	}
-	console.log("education values ::", educationdata)
-	createEducation(educationdata)
-	console.log(educationdata.sectionId);
+	// }
+	// console.log("education values ::", educationdata)
+	// createEducation(educationdata)
+	// console.log(educationdata.sectionId);
 
 })
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 let companyname = document.getElementById('company-name');
@@ -117,8 +192,17 @@ let btnWork = document.getElementById('worksubmit');
 btnWork.addEventListener('click', e => {
 	e.preventDefault(); 
 
+	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
+	const Sectiondata ={	
+
+		title: 5,
+		resumeId: resume.result.id,
+	}
+	console.log("Section details ::", Sectiondata)
+    createSection(Sectiondata)
+
 	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
-	console.log('passed edu' , sectionInfo.result.id)
+	console.log('passed work' , sectionInfo.result.id)
 
 	const workdata = {
 		title: position.value,
@@ -142,9 +226,17 @@ let btnSkill = document.getElementById('skillsubmit');
 
 btnSkill.addEventListener('click', e => {
 	e.preventDefault(); 
+	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
+	const Sectiondata ={	
+
+		title: 3,
+		resumeId: resume.result.id,
+	}
+	console.log("Section details ::", Sectiondata)
+    createSection(Sectiondata)
 
 	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
-	console.log('passed edu' , sectionInfo.result.id)
+	console.log('passed skill' , sectionInfo.result.id)
 
 	const skilldata = {
 			name: skillname.value,
@@ -167,6 +259,15 @@ let btnCert = document.getElementById('certsubmit');
 btnCert.addEventListener('click', e => {
 	e.preventDefault(); 
 
+	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
+	const Sectiondata ={	
+
+		title: 2,
+		resumeId: resume.result.id,
+	}
+	console.log("Section details ::", Sectiondata)
+    createSection(Sectiondata)
+
 	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
 	console.log('passed cert' , sectionInfo.result.id)
 
@@ -184,49 +285,7 @@ btnCert.addEventListener('click', e => {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Adding and removing education entries
-const form_education = document.getElementById("education-form");
-const educationList = document.getElementById("education-list");
-const addEducationBtn = document.getElementById("add-education-btn");
 
-let educationIndex = 1;
-
-addEducationBtn.addEventListener("click", function (event) {
-	event.preventDefault();
-
-	const educationContainer = document.createElement("div");
-	educationContainer.classList.add("education-container");
-
-	const schoolName = document.createElement("p");
-	schoolName.textContent = `School Name: ${form_education["school-name"].value}`;
-	educationContainer.appendChild(schoolName);
-
-	const degree = document.createElement("p");
-	degree.textContent = `Degree: ${form_education["degree"].value}`;
-	educationContainer.appendChild(degree);
-
-	const major = document.createElement("p");
-	major.textContent = `Major: ${form_education["major"].value}`;
-	educationContainer.appendChild(major);
-
-	const endDate = document.createElement("p");
-	endDate.textContent = `End Date: ${form_education["end-date"].value}`;
-	educationContainer.appendChild(endDate);
-
-	const removeEducationBtn = document.createElement("button");
-	removeEducationBtn.classList.add("remove-education-btn");
-	removeEducationBtn.textContent = "Remove Education";
-	removeEducationBtn.addEventListener("click", function (event) {
-		educationContainer.remove();
-	});
-	educationContainer.appendChild(removeEducationBtn);
-
-	educationList.appendChild(educationContainer);
-
-	form_education.reset();
-
-	educationIndex++;
-});
 
 const form_work = document.getElementById("work-experience-form");
 const workExperienceList = document.getElementById("work-experience-list");
@@ -482,3 +541,8 @@ shadow.addEventListener("click", function () {
 // let personInfo = JSON.parse(localStorage.getItem('UserInfo'))
 // console.log("person info", fetchPerson)
 // fetchUser(localStorage.getItem(personInfo.reult["UserId"]))
+
+const generateResume = document.querySelector("#template")
+if(generateResume){
+
+}

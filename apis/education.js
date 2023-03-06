@@ -17,7 +17,11 @@ function createEducation(educationDetails){
       fetch("http://localhost:21021/api/services/app/Education/Create", requestOptions)
         .then(response => response.json())
         .then(result => {
-            localStorage.setItem('EducationInfo', JSON.stringify(result))          
+          if(result.success){
+            localStorage.setItem('EducationInfo', JSON.stringify(result))     
+          }else{
+            alert("an error occurred!");
+          }     
         })
         .catch(error => alert('error', error));
         

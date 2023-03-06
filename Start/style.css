@@ -47,8 +47,107 @@ header{
 
 .menu_list li a:hover{
 	color:  #B279A7;
-
 }
+.rocket-container {
+	position: relative;
+	height: 500px;
+  }
+  
+  .rocket {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 100px;
+	animation: fly 2s ease-out infinite;
+  }
+  
+  .rocket img {
+	width: 100%;
+	height: 100%;
+  }
+  
+  .flame {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 20px;
+	height: 20px;
+	background: #B279A7;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px 2px rgba(255, 87, 34, 0.4);
+	animation: flame 1s ease-out infinite;
+	z-index: -1;
+  }
+  
+  .component-left,
+  .component-right {
+	position: absolute;
+	bottom: 0;
+	width: 20px;
+	height: 100px;
+	background: linear-gradient(to top, #444, #333);
+	transform-origin: bottom;
+	animation: shake 0.1s ease-in-out infinite;
+  }
+  
+  .component-left {
+	left: 25%;
+	transform: skew(-20deg);
+  }
+  
+  .component-right {
+	right: 25%;
+	transform: skew(20deg);
+  }
+  
+  @keyframes fly {
+	0% {
+	  transform: translate(-50%, 80%) rotate(-2deg);
+	}
+	50% {
+	  transform: translate(-50%, 10%) rotate(2deg);
+	}
+	100% {
+	  transform: translate(-50%, 80%) rotate(-2deg);
+	}
+  }
+  
+  @keyframes flame {
+	0% {
+	  opacity: 0.8;
+	  transform: scale(1);
+	}
+	50% {
+	  opacity: 0.4;
+	  transform: scale(0.8);
+	}
+	100% {
+	  opacity: 0.8;
+	  transform: scale(1);
+	}
+  }
+  
+  @keyframes shake {
+	0% {
+	  transform: scaleY(1) translateX(0);
+	}
+	25% {
+	  transform: scaleY(1.1) translateX(-2px);
+	}
+	50% {
+	  transform: scaleY(1) translateX(0);
+	}
+	75% {
+	  transform: scaleY(0.9) translateX(2px);
+	}
+	100% {
+	  transform: scaleY(1) translateX(0);
+	}
+  }
+  
 
 .header_content{
 	width: 100%;
@@ -64,7 +163,6 @@ header{
 	margin-bottom: 50px;
 	font-size: 17px;
 	font-weight: 200px;
-	letter-spacing: 0.3em;
 	color: black;
 }
 
@@ -96,3 +194,4 @@ header{
 	background-color: #B279A7;
 	border: 1px solid #B279A7;
 }
+
