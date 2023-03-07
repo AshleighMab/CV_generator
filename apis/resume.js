@@ -39,10 +39,11 @@ function fetchResume(id){
         'Content-Type': 'application/json;charset=UTF-8'
     },
     };
-    fetch(`http://localhost:21021/api/services/app/Resume/GetAllResumesById?id=${id}`, requestOptions)
+    fetch(`http://localhost:21021/api/services/app/Resume/GetResumeById?id=${id}`, requestOptions)
       .then(response => response.json())
       .then(result => {
-          localStorage.setItem('ResumeInfo', JSON.stringify(result))         
+       
+        localStorage.setItem('ResumeInfo', JSON.stringify(result))         
       })
       .catch(error => alert('error', error));
       

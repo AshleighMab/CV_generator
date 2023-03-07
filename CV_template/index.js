@@ -1,15 +1,11 @@
-import { fetchUser } from "../apis/users.js";
 import { createPerson } from './../apis/person.js'
 import { token_Key } from './../appConstants/index.js'
 import { setToken } from './../utils.js'
-import { fetchPerson } from "./../apis/person.js"
 import {createEducation} from "./../apis/education.js"
 import { createResume } from "./../apis/resume.js";
-import { createSection } from "./../apis/section.js";
 import { createWork } from "./../apis/work.js";
 import { createSkill} from "./../apis/skill.js";
 import { createCert } from "./../apis/certificate.js";
-import {fetchResume} from "./../apis/resume.js";
 
 let dob = document.getElementById('dob');
 let race = document.getElementById('race');
@@ -38,27 +34,12 @@ btnpersonalDetails.addEventListener('click', e => {
 	formData.append('address', address.value ?? '')
 	formData.append('userId', localStorage.getItem("UserId"))
 
-	
-	// formData.append('file', null)
-	
-	// const persondata = {
-	// 	title: title.value,
-	// 	dateOfBirth: dob.value,
-	// 	gender: gender.value,
-	// 	race: race.value,
-	// 	identificationNumber: idnum.value,
-	// 	cellNumber: cellphone.value,
-	// 	address: address.value,
-	// 	userId: localStorage.getItem("UserId"),
-	// }
-
 	console.log("values ::", formData)
 	for (const pair of formData.entries()) {
 		console.log(`${pair[0]}, ${pair[1]}`);
 	  }
 	
 	createPerson(formData)
-	// console.log(persondata.userId);
 
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,18 +60,6 @@ createResumeBtn.addEventListener('click', e => {
 	console.log("Resume details ::", resumedata)
     createResume(resumedata)
 
-     //////////////////////////////////////////////////////////////
-	
-	// let sectionInfo = JSON.parse(localStorage.getItem('ResumeInfo'))
-	// console.log('passed' , sectionInfo.result.id)
-
-	// const Sectiondata ={	
-
-	// 	title: 1,
-	// 	resumeId: sectionInfo.result.id,
-	// }
-	// console.log("Section details ::", Sectiondata)
-    // createSection(Sectiondata)
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,35 +121,11 @@ btnEducation.addEventListener('click', e => {
 	e.preventDefault(); 
 
 	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
-	const Sectiondata ={	
 
-		title: 1,
-		resumeId: resume.result.id,
-	}
-	console.log("Section details ::", Sectiondata)
-    createSection(Sectiondata)
-
-	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
 	eduList.map((item)=>{
-		item.sectionId = sectionInfo.result.id;
+		item.ResumeId = resume.result.id;
 		createEducation(item)
 	   });
-
-	// console.log('passed edu' , sectionInfo.result.id)
-
-	// const educationdata = {
-		
-	// 		degree: degree.value,
-	// 		schoolName: schoolname.value,
-	// 		graduationDate: enddate.value,
-	// 		major: major.value,
-	// 		sectionId: sectionInfo.result.id,
-			
-		  
-	// }
-	// console.log("education values ::", educationdata)
-	// createEducation(educationdata)
-	console.log(sectionInfo);
 
 })
 
@@ -235,10 +180,6 @@ addWorkExperienceBtn.addEventListener("click", function (event) {
 	workExperienceIndex++;
 });
 
-let companyname = document.getElementById('company-name');
-let position = document.getElementById('position');
-let startdate = document.getElementById('start-date');
-let workenddate = document.getElementById('work-end-date');
 const workList = [];
 
 let btnWork = document.getElementById('worksubmit');
@@ -247,32 +188,10 @@ btnWork.addEventListener('click', e => {
 	e.preventDefault(); 
 
 	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
-	const Sectiondata ={	
-
-		title: 5,
-		resumeId: resume.result.id,
-	}
-	console.log("Section details ::", Sectiondata)
-    createSection(Sectiondata)
-
-	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
 	workList.map((item)=>{
-		item.sectionId = sectionInfo.result.id;
+		item.ResumeId = resume.result.id;
 		createWork(item)
 	   });
-	// console.log('passed work' , sectionInfo.result.id)
-
-	// const workdata = {
-	// 	title: position.value,
-    //     companyName: companyname.value,
-	//     startDate: startdate.value,
-	//     endDate: workenddate.value,
-    //     sectionId: sectionInfo.result.id,
-					  
-	// }
-	// console.log("work values ::", workdata)
-	// createWork(workdata)
-	// console.log(workList);
 
 })
 
@@ -282,6 +201,7 @@ btnWork.addEventListener('click', e => {
 const form_skills = document.getElementById("skill-form");
 const skillList = document.getElementById("skill-list");
 const addSkillBtn = document.getElementById("add-skill-btn");
+const skillsList = [];
 
 let skillIndex = 1;
 
@@ -292,11 +212,11 @@ addSkillBtn.addEventListener("click", function (event) {
 	skillContainer.classList.add("skill-container");
 
 	const skillName = document.createElement("p");
-	skillName.textContent = `Skill Name: ${form_skills["skill-name"].value}`;
+	skillName.textContent = `${form_skills["skillName"].value}`;
 	skillContainer.appendChild(skillName);
 
 	const skillLevel = document.createElement("p");
-	skillLevel.textContent = `Skill Level: ${form_skills["skill-level"].value}`;
+	skillLevel.textContent = `${form_skills["skillLevel"].value}`;
 	skillContainer.appendChild(skillLevel);
 
 	const removeSkillBtn = document.createElement("button");
@@ -308,46 +228,27 @@ addSkillBtn.addEventListener("click", function (event) {
 	skillContainer.appendChild(removeSkillBtn);
 
 	skillList.appendChild(skillContainer);
-
+	skillsList.push({
+		name : skillName.textContent,
+		proficiencyLevel: skillLevel.textContent,
+	})
 	form_skills.reset();
 
 	skillIndex++;
 });
 
-let skillname = document.getElementById('skill-name');
-let skilllevel = document.getElementById('skill-level');
-
-const skillsList = [];
-
 let btnSkill = document.getElementById('skillsubmit');
 
 btnSkill.addEventListener('click', e => {
 	e.preventDefault(); 
+
 	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
-	const Sectiondata ={	
-
-		title: 3,
-		resumeId: resume.result.id,
-	}
-	console.log("Section details ::", Sectiondata)
-    createSection(Sectiondata)
-
-	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
-	console.log('passed skill' , sectionInfo.result.id)
+	console.log('passed skill' , skillsList)
 
 	skillsList.map((item)=>{
-		item.sectionId = sectionInfo.result.id;
+		item.ResumeId = resume.result.id;
 		createSkill(item)
 	   });
-
-	// const skilldata = {
-	// 		name: skillname.value,
-	// 		proficiencyLevel: skilllevel.value,
-	// 		sectionId:  sectionInfo.result.id,					  
-	// }
-	// console.log("skill values ::", skilldata)
-	// createSkill(skilldata)
-	// console.log(skilldata.sectionId);
 
 })
 
@@ -357,6 +258,7 @@ btnSkill.addEventListener('click', e => {
 const form_certifications = document.getElementById("certification-form");
 const certificationList = document.getElementById("certification-list");
 const addCertificationBtn = document.getElementById("add-certification-btn");
+const certificateList = []; 
 
 let certificationIndex = 1;
 
@@ -367,15 +269,15 @@ addCertificationBtn.addEventListener("click", function (event) {
 	certificationContainer.classList.add("certification-container");
 
 	const certificationName = document.createElement("p");
-	certificationName.textContent = `Certification Name: ${form_certifications["certification-name"].value}`;
+	certificationName.textContent = `${form_certifications["certification-name"].value}`;
 	certificationContainer.appendChild(certificationName);
 
 	const certificationAuthority = document.createElement("p");
-	certificationAuthority.textContent = `Certification Authority: ${form_certifications["certification-authority"].value}`;
+	certificationAuthority.textContent = `${form_certifications["certification-authority"].value}`;
 	certificationContainer.appendChild(certificationAuthority);
 
 	const certificationDate = document.createElement("p");
-	certificationDate.textContent = `Certification Date: ${form_certifications["certification-date"].value}`;
+	certificationDate.textContent = `${form_certifications["certification-date"].value}`;
 	certificationContainer.appendChild(certificationDate);
 
 	const removeCertificationBtn = document.createElement("button");
@@ -387,48 +289,29 @@ addCertificationBtn.addEventListener("click", function (event) {
 	certificationContainer.appendChild(removeCertificationBtn);
 
 	certificationList.appendChild(certificationContainer);
-
+    
+	certificateList.push({
+		name: certificationName.textContent,
+		issuingOrganization: certificationAuthority.textContent,
+		certificationDate: certificationDate.textContent,		
+	})
 	form_certifications.reset();
 
 	certificationIndex++;
 });
-let certname = document.getElementById('certification-name');
-let certorg = document.getElementById('certification-authority');
-let certdate = document.getElementById('certification-date');
 
 let btnCert = document.getElementById('certsubmit');
-const certificateList = [];
 
 btnCert.addEventListener('click', e => {
 	e.preventDefault(); 
 
 	let resume = JSON.parse(localStorage.getItem('ResumeInfo'))
-	const Sectiondata ={	
-
-		title: 2,
-		resumeId: resume.result.id,
-	}
-	console.log("Section details ::", Sectiondata)
-    createSection(Sectiondata)
-
-	let sectionInfo = JSON.parse(localStorage.getItem('SectionInfo'))
-	console.log('passed cert' , sectionInfo.result.id)
+	console.log('passed cert' , resume.result.id)
 
 	certificateList.map((item)=>{
-		item.sectionId = sectionInfo.result.id;
+		item.ResumeId = resume.result.id;
 		createCert(item)
 	   });
-
-	// const certdata = {
-	// 	name: certname.value,
-	// 	issuingOrganization: certorg.value,
-	// 	certificationDate: certdate.value,
-	//     sectionId: sectionInfo.result.id,					  
-	// }
-	// console.log("cert values ::", certdata)
-	// createCert(certdata)
-	// console.log(certdata.sectionId);
-
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -579,15 +462,13 @@ let btnGenerate = document.getElementById('generate');
 btnGenerate.addEventListener('click', e => {
 	e.preventDefault(); 
 
+		// Redirect to the generated CV page
 		window.location.href = './../CV_generated/index.html';
 
-	
-	// Reload the redirected page automatically
-	window.onload = function() {
-		setTimeout(function() {
+		// Reload the redirected page automatically
+		window.onload = function() {
 			location.reload();
-		}, 1000);
-	}
+		}
 
 })
 

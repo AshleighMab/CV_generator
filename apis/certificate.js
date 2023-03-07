@@ -17,7 +17,8 @@ function createCert(certDetails){
       fetch("http://localhost:21021/api/services/app/Certification/Create", requestOptions)
         .then(response => response.json())
         .then(result => {
-            localStorage.setItem('CertInfo', JSON.stringify(result))          
+          console.log("creating a person")
+            localStorage.setItem('certInfo', JSON.stringify(result))          
         })
         .catch(error => alert('error', error));
         

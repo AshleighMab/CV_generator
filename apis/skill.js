@@ -4,7 +4,7 @@ import {token_Key} from './../appConstants/index.js'
 const token=getToken(token_Key);
 
 function createSkill(skillDetails){
-    console.log('fetching data')
+    console.log("imskills",skillDetails)
       var requestOptions = {
         method: 'POST',
         headers: {
@@ -17,7 +17,7 @@ function createSkill(skillDetails){
       fetch("http://localhost:21021/api/services/app/Skill/Create", requestOptions)
         .then(response => response.json())
         .then(result => {
-            localStorage.setItem('SkillInfo', JSON.stringify(result))          
+            localStorage.setItem('skillInfo', JSON.stringify(result))          
         })
         .catch(error => alert('error', error));
         
