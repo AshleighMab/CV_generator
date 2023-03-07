@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-* {
+body {
     background-image: url(./../static/images/greenbg.jpg);
 }
 .section{
@@ -242,11 +242,13 @@ body {
     border: 1px solid white;
     outline: none;
     background: white;
+    border:1px solid #009579;
+    background: #ffffff;
     transition: background 0.2s, border-color 0.2s;
 }
 
 .form_input:focus {
-    border-color:#009579;
+    border-color:#B279A7;
     background: #ffffff;
 }
 

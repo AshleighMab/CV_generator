@@ -4,7 +4,6 @@
 <head>
 	<title>CV</title>
 	<link rel="stylesheet" type="text/css" href="./../CV_template/style.css">
-	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -268,9 +267,11 @@
 		<div class="success_wrap">
 			<span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
 			<p>Your CV has been generated</p>
-			<p class="form_text">
-				<a class="form_link" href="./../CV_generated/index.html" id="template">View CV</a>
-			</p>
+
+			<button type="button" id="generate" class="btn_done">View CV</button>
+			<!-- <p class="form_text">
+				<a class="form_link" href="./../CV_generated/index.html" id="generated">View CV</a>
+			</p> -->
 		</div>
 
 	</div>

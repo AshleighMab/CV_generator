@@ -29,18 +29,17 @@ function createResume(resumeDetails){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function generateResume(){
-  console.log('fetching data')
-    // var requestOptions = {
-    //   method: 'POST',
-    //   headers: {
-    //     'Authorization':`Bearer ${token}`,
-    //     'Accept': 'application/json, text/plain',
-    //     'Content-Type': 'application/json;charset=UTF-8'
-    // },
-    //   body: JSON.stringify(resumeDetails)
-    // };
-    fetch("http://localhost:21021/api/services/app/Resume/GetResumeById")
+function fetchResume(id){
+  console.log('fetching resume Data')
+    var requestOptions = {
+      method: 'GET',
+      headers: {
+        'Authorization':`Bearer ${token}`,
+        'Accept': 'application/json, text/plain',
+        'Content-Type': 'application/json;charset=UTF-8'
+    },
+    };
+    fetch(`http://localhost:21021/api/services/app/Resume/GetAllResumesById?id=${id}`, requestOptions)
       .then(response => response.json())
       .then(result => {
           localStorage.setItem('ResumeInfo', JSON.stringify(result))         
@@ -50,5 +49,5 @@ function generateResume(){
       console.log('end of resume creation')
 }
 
-export{createResume}
+export{createResume, fetchResume}
 
