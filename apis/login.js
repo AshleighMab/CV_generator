@@ -1,8 +1,6 @@
 import {getToken} from './../utils.js'
 import {token_Key} from './../appConstants/index.js'
-
 const token=getToken(token_Key);
-
 let dataResults;
  const LogInUser = async (loginDetails) =>{
     let requestOption = {
@@ -14,7 +12,6 @@ let dataResults;
         },
         body: JSON.stringify(loginDetails)
     }
-
 const response = await fetch('http://localhost:21021/api/TokenAuth/Authenticate', requestOption)
   .then(response => response.json())
   .then(data => { 'boruto', console.log(data)
@@ -31,15 +28,18 @@ const response = await fetch('http://localhost:21021/api/TokenAuth/Authenticate'
     }
     else
     {
-
         localStorage.clear()
         console.log("Hello");
     }
-
   });
-
   return response;
 }
-
 export{LogInUser}
+
+
+
+
+
+
+
 

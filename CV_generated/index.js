@@ -37,7 +37,7 @@ let resumeInfo = JSON.parse(localStorage.getItem('ResumeInfo'))
 //	console.log('passed' , personInfo.result.id)
 fetchResume(resumeInfo.result.id);
 
-// console.log("user name:",resumeInfo.result.firstName)
+
 console.log("im  education", resumeInfo.result.education)
 console.log("im  work", resumeInfo.result.workExperience)
 console.log("im  skills", resumeInfo.result.skill)
@@ -72,7 +72,7 @@ gender.innerHTML = genderX
 
 let dob = document.getElementById('dob')
 let dobX = resumeInfo.result.person.dateOfBirth
-dob.innerHTML = dobX
+dob.innerHTML = dobX.substring(0,10)
 
 let email = document.getElementById('email')
 let emailX = resumeInfo.result.person.emailAddress
@@ -99,122 +99,6 @@ let title = document.getElementById('title')
 let titleX = resumeInfo.result.person.titleText
 title.innerHTML = titleX
 
-
-
-
-// let degree = document.getElementById('degree')
-// let degreeX = resumeInfo.result.education[0].degree
-// degree.innerHTML = degreeX
-
-
-// let major = document.getElementById('major')
-// let majorX = resumeInfo.result.education[0].major
-// major.innerHTML = majorX
-
-// for(let i=0; i<eduArray.length;i++){
-//     console.log("iam itme", eduArray[i])
-
-//     let year = document.getElementById('edu_year')
-//     year.innerHTML = eduArray[i].graduationDate;
-//     let schoolname = document.getElementById('schoolname')
-//     schoolname.innerHTML = eduArray[i].schoolName;
-//     let major = document.getElementById('major') 
-//     major.innerHTML= eduArray[i].major
-//     let degree = document.getElementById('degree') 
-//     degree.innerHTML = eduArray[i].degree
-// }
-
-///////////////////////////////////////////////////////////////////////
-//education
-// for(let i=0; i<eduArray.length; i++) {
-//   let eduCard = document.createElement('article');
-//   eduCard.classList.add('card');
-  
-//   let year = document.createElement('p');
-//   year.innerHTML = eduArray[i].graduationDate;
-//   eduCard.appendChild(year);
-  
-//   let schoolname = document.createElement('p');
-//   schoolname.innerHTML = eduArray[i].schoolName;
-//   eduCard.appendChild(schoolname);
-  
-//   let major = document.createElement('p');
-//   major.innerHTML = eduArray[i].major;
-//   eduCard.appendChild(major);
-  
-//   let degree = document.createElement('p');
-//   degree.innerHTML = eduArray[i].degree;
-//   eduCard.appendChild(degree);
-  
-//   document.body.appendChild(eduCard);
-// }
-
-// //////////////////////////////////////////
-// //workExperience
-
-// for(let i=0; i<workArray.length; i++) {
-//     let workCard = document.createElement('article');
-//     workCard.classList.add('card');
-    
-//     let companyName = document.createElement('p');
-//     companyName.innerHTML = workArray[i].companyName;
-//     workCard.appendChild(companyName);
-    
-//     let position = document.createElement('p');
-//     position.innerHTML = workArray[i].position;
-//     workCard.appendChild(position);
-    
-//     let startDate = document.createElement('p');
-//     startDate.innerHTML = workArray[i].startDate;
-//     workCard.appendChild(startDate);
-    
-//     let endDate = document.createElement('p');
-//     endDate.innerHTML = workArray[i].endDate;
-//     workCard.appendChild(endDate);
-    
-//     document.body.appendChild(workCard);
-//   }
-  
-//   //////////////////////////////////////////
-// //skills
-// for(let i=0; i<skillArray.length; i++) {
-//     let skillCard = document.createElement('article');
-//     skillCard.classList.add('card');
-    
-//     let skillName = document.createElement('p');
-//     skillName.innerHTML = skillArray[i].name;
-//     skillCard.appendChild(skillName);
-    
-//     let level = document.createElement('p');
-//     level.innerHTML = skillArray[i].proficiencyLevel;
-//     skillCard.appendChild(level);
-
-    
-//     document.body.appendChild(skillCard);
-//   }
-
-// //////////////////////////////////////////
-// //certifications
-// for(let i=0; i<certArray.length; i++) {
-//     let certCard = document.createElement('article');
-//     certCard.classList.add('card');
-    
-//     let companyName = document.createElement('p');
-//     companyName.innerHTML = certArray[i].name;
-//     certCard.appendChild(companyName);
-    
-//     let position = document.createElement('p');
-//     position.innerHTML = certArray[i].issuingOrganization;
-//     certCard.appendChild(position);
-    
-//     let startDate = document.createElement('p');
-//     startDate.innerHTML = certArray[i].certificationDate;
-//     certCard.appendChild(startDate);
-        
-//     document.body.appendChild(certCard);
-//   }
-
-/////new code testing /////////////
 const eduSection = document.getElementById('education');
 const workSection = document.getElementById('work-experience');
 const skillsSection = document.getElementById('skills');
@@ -225,19 +109,19 @@ for(let i=0; i<eduArray.length; i++) {
   eduCard.classList.add('card');
 
   let year = document.createElement('p');
-  year.innerHTML = eduArray[i].graduationDate;
+  year.innerHTML = `Graduation Date: ${eduArray[i].graduationDate.substring(0,10)}`;
   eduCard.appendChild(year);
 
   let schoolname = document.createElement('p');
-  schoolname.innerHTML = eduArray[i].schoolName;
+  schoolname.innerHTML = `School Name : ${eduArray[i].schoolName}`;
   eduCard.appendChild(schoolname);
 
   let major = document.createElement('p');
-  major.innerHTML = eduArray[i].major;
+  major.innerHTML = `Major : ${eduArray[i].major}`;
   eduCard.appendChild(major);
 
   let degree = document.createElement('p');
-  degree.innerHTML = eduArray[i].degree;
+  degree.innerHTML = `Degree : ${eduArray[i].degree}`;
   eduCard.appendChild(degree);
 
   eduSection.appendChild(eduCard);
@@ -248,19 +132,19 @@ for(let i=0; i<workArray.length; i++) {
   workCard.classList.add('card');
 
   let companyName = document.createElement('p');
-  companyName.innerHTML = workArray[i].companyName;
+  companyName.innerHTML = `Company Name : ${workArray[i].companyName}`;
   workCard.appendChild(companyName);
 
   let position = document.createElement('p');
-  position.innerHTML = workArray[i].position;
+  position.innerHTML = `Title : ${workArray[i].title}`;
   workCard.appendChild(position);
 
   let startDate = document.createElement('p');
-  startDate.innerHTML = workArray[i].startDate;
+  startDate.innerHTML = `Start Date : ${workArray[i].startDate.substring(0,10)}`;
   workCard.appendChild(startDate);
 
   let endDate = document.createElement('p');
-  endDate.innerHTML = workArray[i].endDate;
+  endDate.innerHTML = `End Date : ${workArray[i].endDate.substring(0,10)}`;
   workCard.appendChild(endDate);
 
   workSection.appendChild(workCard);
@@ -271,11 +155,11 @@ for(let i=0; i<skillArray.length; i++) {
   skillCard.classList.add('card');
 
   let skillName = document.createElement('p');
-  skillName.innerHTML = skillArray[i].name;
+  skillName.innerHTML = `Skill name : ${skillArray[i].name}`;
   skillCard.appendChild(skillName);
 
   let level = document.createElement('p');
-  level.innerHTML = skillArray[i].proficiencyLevel;
+  level.innerHTML = `Proficiency Level : ${skillArray[i].proficiencyLevel}`;
   skillCard.appendChild(level);
 
   skillsSection.appendChild(skillCard);
@@ -286,12 +170,16 @@ for(let i=0; i<certArray.length; i++) {
   certCard.classList.add('card');
 
   let certName = document.createElement('p');
-  certName.innerHTML = certArray[i].name;
+  certName.innerHTML = `Certification Name : ${certArray[i].name}`;
   certCard.appendChild(certName);
 
   let issuingOrg = document.createElement('p');
-  issuingOrg.innerHTML = certArray[i].issuingOrganization;
+  issuingOrg.innerHTML = `Issuing Organization : ${certArray[i].issuingOrganization}`;
   certCard.appendChild(issuingOrg);
  
+  let certDate = document.createElement('p');
+  certDate.innerHTML = `Certification Date : ${certArray[i].certificationDate.substring(0,10)}`;
+  certCard.appendChild(certDate);
+
   certSection.appendChild(certCard)
 }
