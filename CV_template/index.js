@@ -18,7 +18,7 @@ let idnum = document.getElementById('idnum');
 
 let btnpersonalDetails = document.getElementById('btnpersonalDetails');
 
-setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6IjBiMmIxNGUyLWJmYTctZjNiNy0zMjRmLTNhMDljZTdjNTM0OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6IjYwZmViYmIyLTMyNzctNGJkZi05MjFkLWU2ZjFmM2VhZjYyOCIsImlhdCI6MTY3ODM0MTM1OSwibmJmIjoxNjc4MzQxMzU5LCJleHAiOjE2Nzg0Mjc3NTksImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.esWrD1aJQBc1OiCn1g0p_LaORvafrIAZYWr2tIysBE8");
+setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6IjBiMmIxNGUyLWJmYTctZjNiNy0zMjRmLTNhMDljZTdjNTM0OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6ImQyZTA5ODAwLTgyZTQtNGJiNi1hZGM1LTFiM2Y0ZjJhYzYxYyIsImlhdCI6MTY3ODM1MzI2NCwibmJmIjoxNjc4MzUzMjY0LCJleHAiOjE2Nzg0Mzk2NjQsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.x1j3BqSo5LvfRRjrCsdBZVEMoD7UlRNUmPAubfCpXKc");
 
 
 btnpersonalDetails.addEventListener('click', e => {
@@ -76,19 +76,32 @@ addEducationBtn.addEventListener("click", function (event) {
 	
 	const educationContainer = document.createElement("div");
 	educationContainer.classList.add("education-container");
+	
+	const schoolNameHeading = document.createElement("h4");
+    schoolNameHeading.textContent = "School:";
+    educationContainer.appendChild(schoolNameHeading);
 
 	const schoolName = document.createElement("p");
 	schoolName.textContent = `${form_education["school-name"].value}`;
 	educationContainer.appendChild(schoolName);
 
+	const degreeNameHeading = document.createElement("h4");
+    degreeNameHeading.textContent = "Degree:";
+    educationContainer.appendChild(degreeNameHeading);
 	const degree = document.createElement("p");
 	degree.textContent = `${form_education["degree"].value}`;
 	educationContainer.appendChild(degree);
 
+	const majorNameHeading = document.createElement("h4");
+    majorNameHeading.textContent = "Major:";
+    educationContainer.appendChild(majorNameHeading);
 	const major = document.createElement("p");
 	major.textContent = `${form_education["major"].value}`;
 	educationContainer.appendChild(major);
 
+	const dateNameHeading = document.createElement("h4");
+    dateNameHeading.textContent = "Date:";
+    educationContainer.appendChild(dateNameHeading);
 	const GraduationDate = document.createElement("p");
 	GraduationDate.textContent = `${form_education["end-date"].value}`;
 	educationContainer.appendChild(GraduationDate);
@@ -144,18 +157,30 @@ addWorkExperienceBtn.addEventListener("click", function (event) {
 	const workExperienceContainer = document.createElement("div");
 	workExperienceContainer.classList.add("work-experience-container");
 
+	const companyNameHeading = document.createElement("h4");
+    companyNameHeading.textContent = "Name:";
+    workExperienceContainer.appendChild(companyNameHeading);
 	const companyName = document.createElement("p");
 	companyName.textContent = `${form_work["company-name"].value}`;
 	workExperienceContainer.appendChild(companyName);
 
+	const positionNameHeading = document.createElement("h4");
+    positionNameHeading.textContent = "Position:";
+    workExperienceContainer.appendChild(positionNameHeading);
 	const position = document.createElement("p");
 	position.textContent = ` ${form_work["position"].value}`;
 	workExperienceContainer.appendChild(position);
 
+	const startDateNameHeading = document.createElement("h4");
+    startDateNameHeading.textContent = "Start date:";
+    workExperienceContainer.appendChild(startDateNameHeading);
 	const startDate = document.createElement("p");
 	startDate.textContent = `${form_work["start-date"].value}`;
 	workExperienceContainer.appendChild(startDate);
 
+	const endDateNameHeading = document.createElement("h4");
+    endDateNameHeading.textContent = "End date:";
+    workExperienceContainer.appendChild(endDateNameHeading);
 	const endDate = document.createElement("p");
 	endDate.textContent = `${form_work["end-date"].value}`;
 	workExperienceContainer.appendChild(endDate);
@@ -211,10 +236,16 @@ addSkillBtn.addEventListener("click", function (event) {
 	const skillContainer = document.createElement("div");
 	skillContainer.classList.add("skill-container");
 
+	const skillNameHeading = document.createElement("h4");
+    skillNameHeading.textContent = "Name:";
+    skillContainer.appendChild(skillNameHeading);
 	const skillName = document.createElement("p");
 	skillName.textContent = `${form_skills["skillName"].value}`;
 	skillContainer.appendChild(skillName);
 
+	const skillLevelHeading = document.createElement("h4");
+    skillLevelHeading.textContent = "Level:";
+    skillContainer.appendChild(skillLevelHeading);
 	const skillLevel = document.createElement("p");
 	skillLevel.textContent = `${form_skills["skillLevel"].value}`;
 	skillContainer.appendChild(skillLevel);
@@ -249,10 +280,9 @@ btnSkill.addEventListener('click', e => {
 		item.ResumeId = resume.result.id;
 		createSkill(item)
 	   });
-
 })
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 //CERTIFICATES
 
 const form_certifications = document.getElementById("certification-form");
@@ -268,14 +298,23 @@ addCertificationBtn.addEventListener("click", function (event) {
 	const certificationContainer = document.createElement("div");
 	certificationContainer.classList.add("certification-container");
 
+	const certificationNameHeading = document.createElement("h4");
+    certificationNameHeading.textContent = "Name:";
+    certificationContainer.appendChild(certificationNameHeading);
 	const certificationName = document.createElement("p");
 	certificationName.textContent = `${form_certifications["certification-name"].value}`;
 	certificationContainer.appendChild(certificationName);
 
+	const certificationAuthNameHeading = document.createElement("h4");
+    certificationAuthNameHeading.textContent = "Authority:";
+    certificationContainer.appendChild(certificationAuthNameHeading);
 	const certificationAuthority = document.createElement("p");
 	certificationAuthority.textContent = `${form_certifications["certification-authority"].value}`;
 	certificationContainer.appendChild(certificationAuthority);
 
+	const certificationDateNameHeading = document.createElement("h4");
+    certificationDateNameHeading.textContent = "Date:";
+    certificationContainer.appendChild(certificationDateNameHeading);
 	const certificationDate = document.createElement("p");
 	certificationDate.textContent = `${form_certifications["certification-date"].value}`;
 	certificationContainer.appendChild(certificationDate);
@@ -286,6 +325,7 @@ addCertificationBtn.addEventListener("click", function (event) {
 	removeCertificationBtn.addEventListener("click", function (event) {
 		certificationContainer.remove();
 	});
+
 	certificationContainer.appendChild(removeCertificationBtn);
 
 	certificationList.appendChild(certificationContainer);
@@ -295,6 +335,7 @@ addCertificationBtn.addEventListener("click", function (event) {
 		issuingOrganization: certificationAuthority.textContent,
 		certificationDate: certificationDate.textContent,		
 	})
+
 	form_certifications.reset();
 
 	certificationIndex++;
@@ -314,7 +355,7 @@ btnCert.addEventListener('click', e => {
 	   });
 })
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var form_1 = document.querySelector(".form_1");
 var form_2 = document.querySelector(".form_2");

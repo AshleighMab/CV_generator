@@ -160,7 +160,7 @@ body {
 	justify-content: flex-end;
 }
 
-.add-education-btn {
+/* .add-education-btn {
 	border: 0;
 	padding: 12px 15px;
 	background: #DBEBC0;
@@ -173,7 +173,7 @@ body {
 	border-radius: 3px;
 	transition: 0.5s ease;
 	cursor: pointer;
-}
+} */
 
 .wrapper .btns_wrap .common_btns button {
 	border: 0;
@@ -293,24 +293,32 @@ input {
 .additions{
 	margin: 30px;
 	display:flex;
-	align-items: center;
-	justify-content: center;
-	justify-content: space-between;
-
+	flex-direction: column;
+	
 }
 
 .education-container {
 	border: 1px solid #ccc;
 	padding: 10px;
 	margin-bottom: 10px;
+	display:flex;
+	gap:8px;
+	position: relative; 
+    width: 735px;
+    height: 90px;
     
 }
 
 .remove-education-btn {
-	display: block;
-	margin-top: 10px;
-	color: red;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 10px;
+	color: #B279A7;
 	cursor: pointer;
+	padding: 5px;
+	margin-right: 10px;
+	
 }
 
 
@@ -318,39 +326,66 @@ input {
 	border: 1px solid #ccc;
 	padding: 10px;
 	margin-bottom: 10px;
+	display:flex;
+	gap:8px;
+	position: relative; 
+    width: 735px;
+    height: 90px;
 }
 
 .remove-work-experience-btn {
-	display: block;
-	margin-top: 10px;
-	color: black;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 10px;
+	color: #B279A7;
 	cursor: pointer;
+	padding: 5px;
+	margin-right: 10px;
 }
 
 .skill-container {
 	border: 1px solid #ccc;
 	padding: 10px;
 	margin-bottom: 10px;
+	display:flex;
+	gap:8px;
+	position: relative; 
+    width: 735px;
+    height: 90px;
   }
 
   .remove-skill-btn {
-	display: block;
-	margin-top: 10px;
-	color: red;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 10px;
+	color: #B279A7;
 	cursor: pointer;
+	padding: 5px;
+	margin-right: 10px;
   }
 
   .certification-container {
 	border: 1px solid #ccc;
 	padding: 10px;
 	margin-bottom: 10px;
+	display:flex;
+	gap:8px;
+	position: relative; 
+    width: 735px;
+    height: 90px;
   }
 
   .remove-certification-btn {
-	display: block;
-	margin-top: 10px;
-	color: red;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 10px;
+	color: #B279A7;
 	cursor: pointer;
+	padding: 5px;
+	margin-right: 10px;
   }
 
   .btnpersonalDetails{
