@@ -15,19 +15,21 @@
     <header>
 
         <div class="user">
-            <img src="./../static/images/greenFlower.jpg" alt="">
-            <h1>Hello ! I'm</h1>
+            <!-- <img src="./../static/images/greenbg.jpg" alt=""> -->
+            <!-- <h1>Hello ! I'm</h1> -->
             <h1 id="name"> </h1>
         </div>
 
         <nav class="navbar">
             <ul>
                 <!-- <li><a href="#home">home</a></li> -->
-                <li><a href="#about">about</a></li>
+                <li><a href="#personaldetails">personal details</a></li>
                 <li><a href="#education">education</a></li>
-                <li><a href="#work">work</a></li>
-                <li><a href="#certificates">certificates</a></li>
-                <!-- <li><a href="#contact">contact</a></li> -->
+                <li><a href="#work-experience">work</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#certifications">certificates</a></li>
+
+                <li id="logout"><a href="./../Start/index.html">Logout</a></li>
             </ul>
         </nav>
 
@@ -53,166 +55,91 @@
 
     <!-- about section starts  -->
 
-    <section class="about" id="about">
+    <section class="about" id="personaldetails">
  
-        <h1 class="heading"> <span>about</span> me </h1>
+        <h1 class="heading"> <span>Personal</span> details </h1>
 
-        <div class="row">
-            <div class="maindetailcontainer">
-
-                <h1> Title: </h1>
-                <h2 id="title"></h2>
-
+        <div class="pdetails">
+        <div class="column1">
+            <div class="row1">
+                <div class="label">Title:</div>
+                <div class="value" id="title"></div>
             </div>
-            <div class="maindetailcontainer">
-
-                <h1> Name : </h1>
-                <h2 id="aboutname"></h2>
-
+            <div class="row1">
+                <div class="label">Name:</div>
+                <div class="value" id="aboutname"></div>
             </div>
-            <div class="maindetailcontainer">
-
-                <h1> Surname : </h1>
-                <h2 id="surname"></h2>
-
+            <div class="row1">
+                <div class="label">Surname:</div>
+                <div class="value" id="surname"></div>
             </div>
-
-            <div class="maindetailcontainer">
-
-                <h1> Gender: </h1>
-                <h2 id="gender"></h2>
-
+            <div class="row1">
+                <div class="label">Gender:</div>
+                <div class="value" id="gender"></div>
             </div>
-            <div class="maindetailcontainer">
-
-                <h1> Race: </h1>
-                <h2 id="race"></h2>
-
+            <div class="row1">
+                <div class="label">Race:</div>
+                <div class="value" id="race"></div>
             </div>
-            <div class="maindetailcontainer">
-
-                <h1> Address: </h1>
-                <h2 id="address"></h2>
-
-            </div>
-            <div class="maindetailcontainer">
-
-                <h1> ID number: </h1>
-                <h2 id="idnum"></h2>
-
-            </div>
-            <div class="maindetailcontainer">
-
-              
-            </div>
-
-            <div class="maindetailcontainer">
-
-                <h1> DOB: </h1>
-                <h2 id="dob"></h2>
-
-            </div>
-            <!-- <div class="info">
-                <h3> Full </h3>
-                <h3 id="fullName"> <span> name : </span> Your Name </h3>
-                <h3 id="dob"> <span> age : </span> 20 </h3>
-                <h3> <span> qualification : </span> Tech </h3>
-                < <h3> <span> post : </span> front end developer </h3> -->
-                <!-- <h3> <span> language : </span> English </h3> -->
-<!-- 
-            </div> --> 
-
-            <div class="maindetailcontainer">
-
-                <i class="fa fa-envelope fa-3x"></i>
-                <h2 id="email"></h2>
-
-            </div>
-
-
-            <div class="maindetailcontainer">
-
-                <i class="fa fa-phone fa-3x"></i>
-                <h2 id="cellphone"> </h2>
-
-            </div>
-            <div class="counter">
-
-                <div class="box">
-                    <span>1</span>
-                    <h3 id="skill">skill</h3>
-                </div>
-
-                <div class="box">
-                    <span>2</span>
-                    <h3>skill</h3>
-                </div>
-
-                <div class="box">
-                    <span>3</span>
-                    <h3>skill</h3>
-                </div>
-
-                <div class="box">
-                    <span>4</span>
-                    <h3>skill</h3>
-                </div>
-
-            </div>
-
         </div>
-
+        
+        <div class="column1">
+            <div class="row1">
+                <div class="label">Address:</div>
+                <div class="value" id="address"></div>
+            </div>
+            <div class="row1">
+                <div class="label">ID number:</div>
+                <div class="value" id="idnum"></div>
+            </div>
+            <div class="row1">
+                <div class="label">DOB:</div>
+                <div class="value" id="dob"></div>
+            </div>
+            <div class="row1">
+                <div class="label">Email:</div>
+                <div class="value" id="email"></div>
+            </div>
+            <div class="row1">
+                <div class="label">Cellphone:</div>
+                <div class="value" id="cellphone"></div>
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
     </section>
 
-    <!-- about section ends -->
 
-    <!-- education section starts  -->
+            <section id="education">
+                <h1 class="heading"> <span>Education</span></h1>
+                <div id="education-card"  class="card-container">
 
-    <!-- <section class="education" id="education">
+                </div>
+            </section>
+    
+              <section id="work-experience">
+                <h1 class="heading"> <span>Work  </span>Experience</h1>
+                <div id="work-experience-card"  class="card-container">
 
-        <h1 class="heading"> my <span>education</span> </h1>
+                </div>
+            </section>
+            
+    
+              <section id="skills">
+                <h1 class="heading"> <span>Skills  </span></h1>
+                <div id="skills-card"  class="card-container">
 
-        <div class="box-container">
+                </div>
+              </section>
+    
+              <section id="certifications">
+                <h1 class="heading"> <span>Certifications </span></h1>
+                <div id="certifications-card"  class="card-container">
 
-            <div class="box" id="xulbox">
-                <i class="fas fa-graduation-cap"></i>
-                <span id="edu_year">YEAR</span>
-                <h3 id="schoolname">SCHOOL NAME</h3>
-                <h3 id="degree">SCHOOL NAME</h3>
-                <h3 id="major">SCHOOL NAME</h3>
-            </div>
-
-        </div>
-
-    </section> -->
-
-    <!-- <section class="education" id="work"> -->
-        <section class="about"  id="education">
-            <h1 class="heading"> <span>Education   </span></h1>
-        </section>
-
-          <section class="about" id="work-experience">
-            <h1 class="heading"> <span>Work Experience   </span></h1>
-        </section>
-        
-
-          <section class="about" id="skills">
-            <h1 class="heading"> <span>Skills   </span></h1>
-          </section>
-
-          <section class="about" id="certifications">
-            <h1 class="heading"> <span>Certifications   </span></h1>
-          </section>
-      
-        <!-- <h1 class="heading"> <span>Work</span> experience </h1> -->
-     
-      
-      
-           
-              
-    <!-- </section> -->
-
-
+                </div>
+              </section>
+    
     <a href="#home" class="top">
 
     </a>

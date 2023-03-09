@@ -1,40 +1,6 @@
 import { fetchResume } from "../apis/resume.js";
 
-// let personInfo = JSON.parse(localStorage.getItem('UserInfo'))
-
-// console.log("user name:",personInfo.result.firstName)
-
-// let userName = document.getElementById('name')
-// let nameX = personInfo.result.firstName
-// userName.innerHTML = nameX
-
-// let surname = document.getElementById('surname')
-// let surnameX = personInfo.result.surname
-// surname.innerHTML = surnameX
-
-// let email = document.getElementById('email')
-// let emailX = personInfo.result.emailAddress
-// email.innerHTML = emailX
-
-// let cellphone = document.getElementById('cellphone')
-// let cellphoneX = personInfo.result.cellNumber
-// cellphone.innerHTML = cellphoneX
-
-
-// let gender = document.getElementById('gender')
-// let genderX = personInfo.result.genderText
-// gender.innerHTML = genderX
-
-// let userName = document.getElementById('userName')
-// let nameX = personInfo.result.firstName
-// userName.innerHTML = nameX
-
-// let educationInfo = JSON.parse(localStorage.getItem('UserInfo'))
-
-// console.log("user name:",personInfo.result.firstName)
 let resumeInfo = JSON.parse(localStorage.getItem('ResumeInfo'))
-// let personInfo = JSON.parse(localStorage.getItem('UserInfo'))
-//	console.log('passed' , personInfo.result.id)
 fetchResume(resumeInfo.result.id);
 
 
@@ -42,6 +8,7 @@ console.log("im  education", resumeInfo.result.education)
 console.log("im  work", resumeInfo.result.workExperience)
 console.log("im  skills", resumeInfo.result.skill)
 console.log("im  certifications", resumeInfo.result.certification)
+
 let eduArray = [];
 let workArray = [];
 let skillArray = [];
@@ -52,6 +19,8 @@ skillArray = resumeInfo.result.skill;
 workArray = resumeInfo.result.workExperience;
 certArray = resumeInfo.result.certification;
 
+///////////////////////////////////////////////////////////////////////////
+//Personal details
 
 let userName = document.getElementById('name')
 let nameX = resumeInfo.result.person.firstName
@@ -99,10 +68,11 @@ let title = document.getElementById('title')
 let titleX = resumeInfo.result.person.titleText
 title.innerHTML = titleX
 
-const eduSection = document.getElementById('education');
-const workSection = document.getElementById('work-experience');
-const skillsSection = document.getElementById('skills');
-const certSection = document.getElementById('certifications');
+
+
+///////////////////////////////////////////////////////////////////////////
+//Education details
+const eduSection = document.getElementById('education-card');
 
 for(let i=0; i<eduArray.length; i++) {
   let eduCard = document.createElement('article');
@@ -127,6 +97,10 @@ for(let i=0; i<eduArray.length; i++) {
   eduSection.appendChild(eduCard);
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Work details
+const workSection = document.getElementById('work-experience-card');
+
 for(let i=0; i<workArray.length; i++) {
   let workCard = document.createElement('article');
   workCard.classList.add('card');
@@ -150,6 +124,11 @@ for(let i=0; i<workArray.length; i++) {
   workSection.appendChild(workCard);
 }
 
+///////////////////////////////////////////////////////////////////////////
+//Skill details
+
+const skillsSection = document.getElementById('skills-card');
+
 for(let i=0; i<skillArray.length; i++) {
   let skillCard = document.createElement('article');
   skillCard.classList.add('card');
@@ -164,6 +143,11 @@ for(let i=0; i<skillArray.length; i++) {
 
   skillsSection.appendChild(skillCard);
 }
+
+///////////////////////////////////////////////////////////////////////////
+//Certification details
+
+const certSection = document.getElementById('certifications-card');
 
 for(let i=0; i<certArray.length; i++) {
   let certCard = document.createElement('article');
