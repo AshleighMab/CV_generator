@@ -7,11 +7,6 @@ function createPerson(personDetails){
     console.log('getting data')
       var requestOptions = {
         method: 'POST',
-      //   headers: {
-      //     'Authorization':`Bearer ${token}`,
-      //     'Accept': 'application/json, text/plain',
-      //     'Content-Type': 'application/json;charset=UTF-8'
-      // },
         body: personDetails
       };
       fetch("http://localhost:21021/api/services/app/Person/CreatePerson", requestOptions)

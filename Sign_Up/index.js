@@ -16,8 +16,7 @@ setToken(token_Key,"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5
 
 signUpButton.addEventListener('click', e=>{
     e.preventDefault();
-    
-    // Check if password and confirmed password match
+
     if (password.value !== confirmPassW.value) {
         alert('Password and confirmed password do not match!');
         return;
