@@ -18,7 +18,7 @@ let idnum = document.getElementById('idnum');
 
 let btnpersonalDetails = document.getElementById('btnpersonalDetails');
 
-setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6IjBiMmIxNGUyLWJmYTctZjNiNy0zMjRmLTNhMDljZTdjNTM0OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6ImQyZTA5ODAwLTgyZTQtNGJiNi1hZGM1LTFiM2Y0ZjJhYzYxYyIsImlhdCI6MTY3ODM1MzI2NCwibmJmIjoxNjc4MzUzMjY0LCJleHAiOjE2Nzg0Mzk2NjQsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.x1j3BqSo5LvfRRjrCsdBZVEMoD7UlRNUmPAubfCpXKc");
+setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6IjBiMmIxNGUyLWJmYTctZjNiNy0zMjRmLTNhMDljZTdjNTM0OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6IjFmOWIyOTQ5LWQwODMtNDE1OS1iMDJhLWI3ZDdkNjhkODIzNiIsImlhdCI6MTY3ODM3MjEwNCwibmJmIjoxNjc4MzcyMTA0LCJleHAiOjE2Nzg0NTg1MDQsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.n6Eqt7jlIBrBlNS8ZmLb4eChQDjYjNozSRLXVAgkzNk");
 
 
 btnpersonalDetails.addEventListener('click', e => {
@@ -363,13 +363,11 @@ var form_3 = document.querySelector(".form_3");
 var form_4 = document.querySelector(".form_4");
 var form_5 = document.querySelector(".form_5");
 
-
 var form_1_btns = document.querySelector(".form_1_btns");
 var form_2_btns = document.querySelector(".form_2_btns");
 var form_3_btns = document.querySelector(".form_3_btns");
 var form_4_btns = document.querySelector(".form_4_btns");
 var form_5_btns = document.querySelector(".form_5_btns");
-
 
 var form_1_next_btn = document.querySelector(".form_1_btns .btn_next");
 var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
@@ -384,7 +382,6 @@ var form_2_progessbar = document.querySelector(".form_2_progessbar");
 var form_3_progessbar = document.querySelector(".form_3_progessbar");
 var form_4_progessbar = document.querySelector(".form_4_progessbar");
 var form_5_progessbar = document.querySelector(".form_5_progessbar");
-
 
 var btn_done = document.querySelector(".btn_done");
 var modal_wrapper = document.querySelector(".modal_wrapper");
@@ -496,7 +493,6 @@ shadow.addEventListener("click", function () {
 // const generateResume = document.querySelector("#template")
 // if(generateResume){
 
-// }
 
 let btnGenerate = document.getElementById('generate');
 
@@ -504,12 +500,12 @@ btnGenerate.addEventListener('click', e => {
 	e.preventDefault(); 
 
 		// Redirect to the generated CV page
-		window.location.href = './../CV_generated/index.html';
 
 		// Reload the redirected page automatically
 		window.onload = function() {
 			location.reload();
 		}
 
+		window.location.href = './../CV_generated/index.html';
 })
 
