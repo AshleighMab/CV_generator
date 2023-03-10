@@ -50,7 +50,8 @@ table {
     background-color: #F5F5F5;
 }
   button:hover {
-    background-color: #3E8E41;
+    background-color: #DBEBC0;
+    color: black;
   }
   .container {
     margin: 20px;
