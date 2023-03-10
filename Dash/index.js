@@ -29,7 +29,7 @@ function populateTable() {
     });
     
     deleteBtn.addEventListener('click', () => {
-  if (confirm("Are you sure you want to delete this row?")) {
+  if (confirm("Are you sure you want to delete this person?")) {
     row.parentNode.removeChild(row);
   }
 });

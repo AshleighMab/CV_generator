@@ -502,9 +502,6 @@ let btnGenerate = document.getElementById('generate');
 btnGenerate.addEventListener('click', e => {
 	e.preventDefault(); 
 
-		// Redirect to the generated CV page
-
-		// Reload the redirected page automatically
 		window.onload = function() {
 			location.reload();
 		}
