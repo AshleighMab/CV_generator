@@ -7,6 +7,7 @@ import { createWork } from "./../apis/work.js";
 import { createSkill} from "./../apis/skill.js";
 import { createCert } from "./../apis/certificate.js";
 
+
 let dob = document.getElementById('dob');
 let race = document.getElementById('race');
 let cellphone = document.getElementById('cell');
@@ -18,7 +19,7 @@ let idnum = document.getElementById('idnum');
 
 let btnpersonalDetails = document.getElementById('btnpersonalDetails');
 
-setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6IjBiMmIxNGUyLWJmYTctZjNiNy0zMjRmLTNhMDljZTdjNTM0OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6IjFmOWIyOTQ5LWQwODMtNDE1OS1iMDJhLWI3ZDdkNjhkODIzNiIsImlhdCI6MTY3ODM3MjEwNCwibmJmIjoxNjc4MzcyMTA0LCJleHAiOjE2Nzg0NTg1MDQsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.n6Eqt7jlIBrBlNS8ZmLb4eChQDjYjNozSRLXVAgkzNk");
+setToken(token_Key, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJBc3BOZXQuSWRlbnRpdHkuU2VjdXJpdHlTdGFtcCI6IjBiMmIxNGUyLWJmYTctZjNiNy0zMjRmLTNhMDljZTdjNTM0OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwic3ViIjoiMSIsImp0aSI6Ijk0Mzc1ZDQwLTcxNGMtNDBhZC04ZThiLWRmYjRkYzkzODAzMCIsImlhdCI6MTY3ODQyNzUzMiwibmJmIjoxNjc4NDI3NTMyLCJleHAiOjE2Nzg1MTM5MzIsImlzcyI6IlJlc3VtZUdlbmVyYXRvciIsImF1ZCI6IlJlc3VtZUdlbmVyYXRvciJ9.EM6V7YyWPVPcCpIQhcX-q7tSqW3q8hlrYMbOdiwi2Z4");
 
 
 btnpersonalDetails.addEventListener('click', e => {
@@ -324,6 +325,8 @@ addCertificationBtn.addEventListener("click", function (event) {
 	removeCertificationBtn.textContent = "Remove Certification";
 	removeCertificationBtn.addEventListener("click", function (event) {
 		certificationContainer.remove();
+
+		
 	});
 
 	certificationContainer.appendChild(removeCertificationBtn);

@@ -50,7 +50,8 @@ header{
 }
 .rocket-container {
 	position: relative;
-	height: 500px;
+	margin-top: 250px;
+	height: 150px;
   }
   
   .rocket {
@@ -61,6 +62,7 @@ header{
 	width: 60px;
 	height: 100px;
 	animation: fly 2s ease-out infinite;
+	color: black;
   }
   
   .rocket img {
@@ -75,9 +77,9 @@ header{
 	transform: translateX(-50%);
 	width: 20px;
 	height: 20px;
-	background: #B279A7;
+	background: #009579;
 	border-radius: 50%;
-	box-shadow: 0px 0px 10px 2px rgba(255, 87, 34, 0.4);
+	box-shadow: 0px 0px 10px 2px #009579;
 	animation: flame 1s ease-out infinite;
 	z-index: -1;
   }
@@ -197,3 +199,6 @@ header{
 	border: 1px solid #B279A7;
 }
 
+#buttonBuild{
+	margin-bottom: 30px;
+}
