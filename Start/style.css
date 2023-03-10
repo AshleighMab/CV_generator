@@ -57,7 +57,7 @@ header{
   .rocket {
 	position: absolute;
 	top: 80%;
-	left: 50%;
+	left: 46%;
 	transform: translateX(-50%);
 	width: 60px;
 	height: 100px;
