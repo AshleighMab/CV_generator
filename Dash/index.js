@@ -29,7 +29,9 @@ function populateTable() {
     });
     
     deleteBtn.addEventListener('click', () => {
-      row.parentNode.removeChild(row);
+      if (confirm("Are you sure you want to delete this row?")) {
+        row.parentNode.removeChild(row);
+      }
     });
     
     viewCell.appendChild(viewBtn);
